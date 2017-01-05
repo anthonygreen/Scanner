@@ -34,7 +34,6 @@ class BBC
         <a href="https://inspector.ibl.api.bbci.co.uk" target="_blank">IBL</a></p>'
 
         @fileHtml.puts "<p>Latest scan took place at - #{Time.now.strftime("%d/%m/%Y %H:%M")}</p>"
-
   end
 
   #---------------------------------------------------------------------------------
