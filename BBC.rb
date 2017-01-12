@@ -13,7 +13,7 @@ class BBC
   #---------------------------------------------------------------------------------
 
   def addHTMLheader()
-    @fileHtml = File.new("daly_bbc_scanner.html", "w+")
+    @fileHtml = File.new("index.html", "w+")
     t = Time.now
     @fileHtml.puts '
     <html>
