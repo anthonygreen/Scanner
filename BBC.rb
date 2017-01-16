@@ -33,7 +33,7 @@ class BBC
         and 
         <a href="https://inspector.ibl.api.bbci.co.uk" target="_blank">IBL</a></p>'
 
-        @fileHtml.puts "<p>Latest scan took place at - #{Time.now.strftime("%d/%m/%Y %H:%M")}</p>"
+        @fileHtml.puts "<p>Latest scan took place at - <div id='scan_time'>#{Time.now.strftime("%A %e/%w/%Y at %l:%M %p")}</div></p>"
   end
 
   #---------------------------------------------------------------------------------
@@ -158,7 +158,7 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
-  def printNewsEntryInfo( new_index , new_parent , new_version )
+  def printSingleNewsEntryInfo( new_index , new_parent , new_version )
     if new_version["content"]["iChefUrl"]
       temp_background_image = "#{new_version["content"]["iChefUrl"].sub("$recipe", "976x549")}"
       @fileHtml.puts "<div class='entry' style='background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{temp_background_image})'>"
@@ -181,7 +181,6 @@ class BBC
     end
 
     @fileHtml.puts "<li><hr></li>"
-
     createNewsArticleLink( new_parent )
     createCookBookLink( "news" , temp_background_image, new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] )
     createAvailabilityLink( new_version["content"]["externalId"] )
@@ -200,7 +199,7 @@ class BBC
 
     new_hash["relations"].each do |parent|
       parent["content"]["relations"].each do |version|
-        
+
         # Nake a link from parent we may have to use
         parent_link = "http://trevor-producer.api.bbci.co.uk/content#{parent["content"]["id"]}"
 
@@ -208,9 +207,9 @@ class BBC
         if version["content"]["externalId"] and not entry_vpids.include? version["content"]["externalId"]
           entry_vpids.push( version["content"]["externalId"] )
           index += 1
-          printNewsEntryInfo( index , parent["content"]["id"] , version )
+          printSingleNewsEntryInfo( index , parent["content"]["id"] , version )
 
-        # Else if there is no externalId and we haven't used the link before then we visit it to check external Trevor link for more vpids!
+        # Else if there is no externalId and we haven't used the link before then we visit it to check external Trevor link for audio vpids!
         elsif not version["content"]["externalId"] and not external_trevor_links.include? parent_link  
           @website_resp = Net::HTTP.get_response(URI.parse(parent_link))
           @website_data = @website_resp.body
@@ -219,22 +218,12 @@ class BBC
           # Store current link so we don't revisit the same TREVOR link multiple times
           external_trevor_links.push(parent_link)
 
-          # This loop is for VIDEO in TREVOR
-          temp_hash["relations"].each do |video|
-            video["content"]["relations"].each do |version|
-              if version["content"]["externalId"] and not entry_vpids.include? version["content"]["externalId"]
-                entry_vpids.push( version["content"]["externalId"] )
-                index += 1
-                printNewsEntryInfo( index , video["content"]["id"] , version )
-              end
-            end
-          end
           # This loop is for AUDIO since its stored differently in TREVOR
           temp_hash["relations"].each do |audio|
             if audio["content"]["externalId"] and not entry_vpids.include? audio["content"]["externalId"] and audio["content"]["duration"] > 1
               entry_vpids.push( audio["content"]["externalId"] )
               index += 1
-              printNewsEntryInfo( index , parent["content"]["id"] , audio )
+              printSingleNewsEntryInfo( index , parent["content"]["id"] , audio )
             end
           end
         end
