@@ -82,14 +82,14 @@ h1
 	position : absolute;
 	top 		 : -12px;
 	left		 : 48%;
-	width    : 700px;
+	width    : 800px;
   display  : flex;
 }
 
 #news_summary
 {
 	position : relative;
-	top      : 40px;
+	top      : 28px;
 	left     : -50%;
 	padding  : 7px;
   flex     : 1;
@@ -98,22 +98,22 @@ h1
 #iplayer_summary
 {
 	position : relative;
-	top      : 40px;
-	left     : -45%;
+	top      : 28px;
+	left     : -55%;
 	padding  : 7px;
 	flex     : 1;
 }
+
+.stat
+{
+	text-decoration : none;
+}
+
 
 .caption,.title
 {
 	font-size   : 15px;
 	font-weight : bold;
-}
-
-.stat
-{
-	list-style 			: none;
-	text-decoration : none;
 }
 
 .entry
