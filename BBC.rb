@@ -7,7 +7,7 @@ require 'time'
 class BBC
 
   def initialize()
-    @website_resp, @website_data, @hash, @side_links = "", "", "", []
+    @website_resp, @website_data, @hash, @side_links, @counted_iplayer, @counted_news = "", "", "", [] , Hash.new(0), Hash.new(0)
   end
 
   #---------------------------------------------------------------------------------
@@ -28,12 +28,11 @@ class BBC
       <div id="wrapper">
         <p>Welcome!</p>
         <p>BBC Scanner outputs the current video and audio catalogue of BBC Iplayer and BBC News!</p>
-        <p>Data is loaded and filtered from 
-        <a href="https://confluence.dev.bbc.co.uk/display/~jamie.pitts@bbc.co.uk/Trevor+Example+Endpoints" target="_blank">TREVOR</a> 
-        and 
+        <p>Data is loaded and filtered from
+        <a href="https://confluence.dev.bbc.co.uk/display/~jamie.pitts@bbc.co.uk/Trevor+Example+Endpoints" target="_blank">TREVOR</a>
+        and
         <a href="https://inspector.ibl.api.bbci.co.uk" target="_blank">IBL</a></p>'
-
-        @fileHtml.puts "<p>Latest scan took place at - <div id='scan_time'>#{Time.now.strftime("%A %e/%w/%Y at %l:%M %p")}</div></p>"
+        @fileHtml.puts "<p>Latest scan took place at - <div id='scan_time'>#{Time.now.strftime("%A %l %B %Y at %l:%M %p")}</div></p>"
   end
 
   #---------------------------------------------------------------------------------
@@ -70,16 +69,6 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
-  def printNewsEntrySummary()
-    @fileHtml.puts "<ul class='news_entry_overall_stats'>"
-    @entry_summary.each do |item , occurences|
-      @fileHtml.puts "<li>#{item} : #{occurences}</li>"
-    end
-    @fileHtml.puts "</ul>"
-  end
-
-  #---------------------------------------------------------------------------------
-
   def clearNewsEntrySummary()
     @entry_summary = Hash.new(0)
   end
@@ -109,9 +98,9 @@ class BBC
 
   def createIplayerKindFlag( new_kind )
     if new_kind == "audio-described"
-      @fileHtml.puts "<li class='iplayer_kind_flag'>AD</li>"
+      @fileHtml.puts "<li class='iplayer_kind_flag_ad'>AD</li>"
     elsif new_kind == "signed"
-      @fileHtml.puts "<li class='iplayer_kind_flag'>SL</li>"   
+      @fileHtml.puts "<li class='iplayer_kind_flag_sl'>SL</li>"
     end
   end
 
@@ -129,36 +118,60 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
-  def createAvailabilityLink( new_pid )
-     @fileHtml.puts "<li><a href='http://media-availability-tool.tools.bbc.co.uk/#{new_pid}?mediator=http%3A%2F%2Fopen.live.bbc.co.uk' 
+  def createAvailabilityToolLink( new_pid )
+     @fileHtml.puts "<li><a href='http://media-availability-tool.tools.bbc.co.uk/#{new_pid}?mediator=http%3A%2F%2Fopen.live.bbc.co.uk'
      target='_blank'>Availability Link</a></li>"
   end
 
   #---------------------------------------------------------------------------------
 
-  def createCookBookLink( new_product , new_image , new_title , new_guidance , new_version_id )
+  def createCookBookLink( new_product , new_image , new_title , new_guidance , new_version_id , new_kind )
     smp_settings = { 'product' => new_product, 'superResponsive' => true }
-    smp_playlist = 
+    smp_playlist =
     {
       'holdingImageURL' => new_image,
       'title'           => new_title,
       'guidance'        => new_guidance,
-      'items' => 
-      [ 
+      'items' =>
+      [
         {
-          'versionID' => new_version_id
+          'versionID' => new_version_id,
+          'kind'      => new_kind
         }
       ]
     }
     encoded_settings = Base64.encode64(smp_settings.to_json).gsub("\n", '')
     encoded_playlist = Base64.encode64(smp_playlist.to_json).gsub("\n", '')
-    @fileHtml.puts "<li><a href='http://cookbook.tools.bbc.co.uk/#{new_product}?settings=#{encoded_settings}&playlist=#{encoded_playlist}' 
+    @fileHtml.puts "<li><a href='http://cookbook.tools.bbc.co.uk/#{new_product}?settings=#{encoded_settings}&playlist=#{encoded_playlist}'
                     target='_blank'>Cookbook Link</a></li>"
   end
 
   #---------------------------------------------------------------------------------
 
+  def collectNewsEntryStats( new_version )
+    @counted_news["Type       #{new_version["content"]["type"].sub( "bbc.mobile.news." , "")} "] += 1
+    @counted_news["Available  #{new_version["content"]["isAvailable"]}"] += 1
+    @counted_news["Guidance   #{new_version["content"]["guidance"]}"] += 1
+    @counted_news["Embeddable #{new_version["content"]["isEmbeddable"]}"] += 1
+  end
+
+  #---------------------------------------------------------------------------------
+
+  def collectIplayerEntryStats( new_hash )
+    new_hash["group_episodes"]["elements"].each do |parent|
+      parent["versions"].each do |version|
+        @counted_iplayer[version["kind"]] += 1
+        if @counted_iplayer[parent["guidance"]]
+          @counted_iplayer["Guidance #{parent["guidance"]}"] += 1
+        end
+      end
+    end
+  end
+
+  #---------------------------------------------------------------------------------
+
   def printSingleNewsEntryInfo( new_index , new_parent , new_version )
+    collectNewsEntryStats(new_version)
     if new_version["content"]["iChefUrl"]
       temp_background_image = "#{new_version["content"]["iChefUrl"].sub("$recipe", "976x549")}"
       @fileHtml.puts "<div class='entry' style='background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{temp_background_image})'>"
@@ -175,19 +188,26 @@ class BBC
     @fileHtml.puts "<li>Embeddable :     #{new_version["content"]["isEmbeddable"]}                        </li>"
     @fileHtml.puts "<li>Available :      #{new_version["content"]["isAvailable"]}                         </li>"
     @fileHtml.puts "<li>Duration :       #{new_version["content"]["duration"]/1000} secs                  </li>"
-  
+
     if new_version["content"]["guidance"]
       @fileHtml.puts "<li>Guidance : #{new_version["content"]["guidance"]}</li>"
     end
 
     @fileHtml.puts "<li><hr></li>"
     createNewsArticleLink( new_parent )
-    createCookBookLink( "news" , temp_background_image, new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] )
-    createAvailabilityLink( new_version["content"]["externalId"] )
+
+    if new_version["content"]["type"] == "bbc.mobile.news.audio"
+      createCookBookLink( "news" , temp_background_image, new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "radioProgramme" )
+    else
+      createCookBookLink( "news" , temp_background_image, new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "programme")
+    end
+
+    createAvailabilityToolLink( new_version["content"]["externalId"] )
 
     if new_version["content"]["type"] == "bbc.mobile.news.audio"
       @fileHtml.puts "<li class='news_audio_flag'>AUDIO</li>"
-    end 
+    end
+
     @fileHtml.puts "</ul></div>"
   end
 
@@ -196,7 +216,6 @@ class BBC
   def printAllNewsVpids( new_title , new_hash )
     index , external_trevor_links, entry_vpids = 0 , [], []
     printNewsHeader( new_title )
-
     new_hash["relations"].each do |parent|
       parent["content"]["relations"].each do |version|
 
@@ -210,7 +229,7 @@ class BBC
           printSingleNewsEntryInfo( index , parent["content"]["id"] , version )
 
         # Else if there is no externalId and we haven't used the link before then we visit it to check external Trevor link for audio vpids!
-        elsif not version["content"]["externalId"] and not external_trevor_links.include? parent_link  
+        elsif not version["content"]["externalId"] and not external_trevor_links.include? parent_link
           @website_resp = Net::HTTP.get_response(URI.parse(parent_link))
           @website_data = @website_resp.body
           temp_hash = JSON.parse(@website_data)
@@ -235,6 +254,7 @@ class BBC
 
   def printAllIplayerVpids( new_title , new_hash )
     index = 0
+    collectIplayerEntryStats( new_hash )
     printIplayerHeader( new_title )
     new_hash["group_episodes"]["elements"].each do |parent|
       parent["versions"].each do |version|
@@ -265,12 +285,54 @@ class BBC
         end
         @fileHtml.puts "<li><hr></li>"
         createIplayerLink( parent["id"] , version["kind"] )
-        createCookBookLink( "iplayer" , temp_image , parent["title"] , temp_guidance , version["id"] )
-        createAvailabilityLink (version["id"] )
+        createCookBookLink( "iplayer" , temp_image , parent["title"] , temp_guidance , version["id"] , "programme" )
+        createAvailabilityToolLink (version["id"] )
         createIplayerKindFlag( version["kind"] )
         @fileHtml.puts "</ul></div>"
       end
     end
+  end
+
+  #---------------------------------------------------------------------------------
+
+  def printIplayerSummary()
+    @fileHtml.puts '<div id="iplayer_summary">'
+    @fileHtml.puts "<h3>Iplayer</h3>"
+    @fileHtml.puts "<ul>"
+    @counted_iplayer = Hash[@counted_iplayer.map {|k,v| [k,v.to_s] }]
+    temp = Hash[ @counted_iplayer.sort_by { |key, val| key } ]
+    temp.each do |key,value|
+    @fileHtml.puts "<li class='stat'>#{key}</li>" # Will include #{value} in future when I've fixed it
+    end
+    @fileHtml.puts "</ul>"
+    @fileHtml.puts "</div>"
+    puts @counted_iplayer
+  end
+
+  #---------------------------------------------------------------------------------
+
+  def printNewsSummary()
+    @fileHtml.puts '<div id="news_summary">'
+    @fileHtml.puts "<h3>News</h3>"
+    @fileHtml.puts "<ul>"
+    @counted_news = Hash[@counted_news.map {|k,v| [k,v.to_s] }]
+    temp = Hash[ @counted_news.sort_by { |key, val| key } ]
+    temp.each do |key,value|
+    @fileHtml.puts "<li class='stat'>#{key}</li>" # Will include #{value} in future when I've fixed it
+    end
+    @fileHtml.puts "</ul>"
+    @fileHtml.puts "</div>"
+    puts @counted_news
+  end
+
+  #---------------------------------------------------------------------------------
+
+  def printAllStats()
+    @fileHtml.puts '<div id="stats_summary">'
+    @fileHtml.puts "<p>Scanner has detected on the BBC site there are vpids with properties...</p>"
+    printNewsSummary()
+    printIplayerSummary()
+    @fileHtml.puts "</div>"
   end
 
   #---------------------------------------------------------------------------------
@@ -286,12 +348,3 @@ class BBC
     end
   end
 end
-
-
-
-
-
-
-
-
-

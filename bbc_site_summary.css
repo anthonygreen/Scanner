@@ -1,53 +1,53 @@
 body
 {
 	font-family : 'Lato', Calibri, Arial, sans-serif;
-    font-size   : 12px;
+  font-size   : 12px;
 }
 
 #nav_bar
 {
-	position		 : fixed;
-	width			 : 110%;
-	height			 : 50px;
-	margin-top		 : -17px;
-	margin-left		 : -8px;
-	z-index			 : 10; 
-	opacity			 : 0.9;
+	position		 		 : fixed;
+	width			 			 : 110%;
+	height			 		 : 50px;
+	margin-top		 	 : -17px;
+	margin-left		 	 : -8px;
+	z-index			 		 : 10;
+	opacity			 		 : 0.9;
 	background-color : white;
-	color       	 : black;
+	color       	 	 : black;
 	border-bottom    : 1px solid #CCCCCC;
 }
 
 #nav_bar a
 {
 	text-decoration : none;
-	color 			: black;
+	color 			    : black;
 }
 
 #nav_bar img
 {
-	vertical-align: text-top;
+	vertical-align : text-top;
 }
 
 #side_links
 {
 	position : fixed;
-    top      : 5%;
-    left     : -2%;
+  top      : 6.5%;
+  left     : -2%;
 }
 
 #side_links li
 {
-   	list-style 		 : none;
+   	list-style 		   : none;
     border-bottom 	 : 1px solid grey;
    	padding          : 7px;
    	background-color : #333333;
-   	color 		  	 : white;
+   	color 		  	   : white;
 }
 
 #side_links a
 {
-   	color 			: white;
+   	color 			    : white;
    	text-decoration : none;
 }
 
@@ -77,22 +77,55 @@ h1
 	font-weight : bold;
 }
 
+#stats_summary
+{
+	position : absolute;
+	top 		 : -12px;
+	left		 : 48%;
+	width    : 700px;
+  display  : flex;
+}
+
+#news_summary
+{
+	position : relative;
+	top      : 40px;
+	left     : -50%;
+	padding  : 7px;
+  flex     : 1;
+}
+
+#iplayer_summary
+{
+	position : relative;
+	top      : 40px;
+	left     : -45%;
+	padding  : 7px;
+	flex     : 1;
+}
+
 .caption,.title
 {
 	font-size   : 15px;
 	font-weight : bold;
 }
 
+.stat
+{
+	list-style 			: none;
+	text-decoration : none;
+}
+
 .entry
 {
-	position 	   		: relative;
-	width 		   		: 15%;
-	height 		   		: 450px;
-    display        		: inline-block;
-    vertical-align 		: top;
-    border   	   		: 1px solid #B3B6BF;
-    background-position : 50% 50%;
-    background-color    : white; 
+	position 	   				: relative;
+	width 		   				: 15%;
+	height 		   				: 500px;
+  display        			: inline-block;
+  vertical-align 			: top;
+  border   	   			  : 1px solid #B3B6BF;
+  background-position : 50% 50%;
+  background-color    : white;
 }
 
 .entry:hover
@@ -120,24 +153,28 @@ h1
 	border: 1px dashed #B3B6BF;
 }
 
-.iplayer_kind_flag
+.iplayer_kind_flag_ad
 {
-	top 			 : 05px;
-	width            : 15px;
-	background-color : black;
+	top 			 			 : 05px;
+	width            : 40px;
+	background-color : #214164;
 	color            : white;
+	text-align       : center;
+}
+
+.iplayer_kind_flag_sl
+{
+	top 			 			 : 05px;
+	width            : 40px;
+	background-color : #1c7e55;
+	color            : white;
+	text-align       : center;
 }
 
 .news_audio_flag
 {
-	top 			 : 05px;
+	top 			       : 05px;
 	width            : 34px;
 	background-color : red;
 	color            : white;
 }
-
-
-
-
-
-
