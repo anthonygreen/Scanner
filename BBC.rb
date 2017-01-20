@@ -329,7 +329,7 @@ class BBC
 
   def printAllStats()
     @fileHtml.puts '<div id="stats_summary">'
-    @fileHtml.puts "<p>Scanner has detected on the BBC site there are vpids with properties...</p>"
+    @fileHtml.puts "<p>Scanner has detected on the BBC site <b>right now</b> there are vpids with properties...</p>"
     printNewsSummary()
     printIplayerSummary()
     @fileHtml.puts "</div>"
