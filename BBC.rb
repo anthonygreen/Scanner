@@ -53,6 +53,50 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
+  def printAllPagesCombinedStats()
+    @fileHtml.puts '<div id="stats_summary">'
+    @fileHtml.puts "<p>Scanner has detected on the BBC site <b>right now</b> there are vpids with properties...</p>"
+    printNewsSummary()
+    printIplayerSummary()
+    @fileHtml.puts "</div>"
+  end
+
+  #---------------------------------------------------------------------------------
+
+  def printIplayerSummary()
+    @fileHtml.puts '<div id="iplayer_summary">'
+    @fileHtml.puts "<h3>Iplayer</h3>"
+    @fileHtml.puts "<ul>"
+    @counted_iplayer = Hash[@counted_iplayer.map {|k,v| [k,v.to_s] }]
+    # Sort it alphabetically so it'll be easier to read in the final HTML output
+    temp = Hash[ @counted_iplayer.sort_by { |key, val| key } ]
+    temp.each do |key,value|
+    @fileHtml.puts "<li class='stat'>#{key} = #{value}</li>"
+    end
+    @fileHtml.puts "</ul>"
+    @fileHtml.puts "</div>"
+    puts @counted_iplayer
+  end
+
+  #---------------------------------------------------------------------------------
+
+  def printNewsSummary()
+    @fileHtml.puts '<div id="news_summary">'
+    @fileHtml.puts "<h3>News</h3>"
+    @fileHtml.puts "<ul>"
+    @counted_news = Hash[@counted_news.map {|k,v| [k,v.to_s] }]
+    # Sort it alphabetically so it'll be easier to read in the final HTML output
+    temp = Hash[ @counted_news.sort_by { |key, val| key } ]
+    temp.each do |key,value|
+    @fileHtml.puts "<li class='stat'>#{key}</li>" # Will include #{value} in future when I've figured out what's going on properly with TREVOR
+    end
+    @fileHtml.puts "</ul>"
+    @fileHtml.puts "</div>"
+    puts @counted_news
+  end
+
+  #---------------------------------------------------------------------------------
+
   def printNewsHeader( new_title )
     @fileHtml.puts "<div id='news_div'>"
     @fileHtml.puts "<h2><img id='#{new_title}'src='images/news_icon.jpeg'/> #{new_title}</h2>"
@@ -69,13 +113,7 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
-  def clearNewsEntrySummary()
-    @entry_summary = Hash.new(0)
-  end
-
-  #---------------------------------------------------------------------------------
-
-  def getIplayerTotal()
+  def getIplayerTotalVpids()
     @website_resp = Net::HTTP.get_response(URI.parse("https://ibl.api.bbci.co.uk/ibl/v1/groups/popular/episodes?per_page=1&page=1"))
     @website_data = @website_resp.body
     @hash = JSON.parse(@website_data)
@@ -140,6 +178,7 @@ class BBC
         }
       ]
     }
+    # Need to encode settings + playlist so they can be passed into the browser TO the CookBook page successfully!
     encoded_settings = Base64.encode64(smp_settings.to_json).gsub("\n", '')
     encoded_playlist = Base64.encode64(smp_playlist.to_json).gsub("\n", '')
     @fileHtml.puts "<li><a href='http://cookbook.tools.bbc.co.uk/#{new_product}?settings=#{encoded_settings}&playlist=#{encoded_playlist}'
@@ -160,8 +199,10 @@ class BBC
   def collectIplayerEntryStats( new_hash )
     new_hash["group_episodes"]["elements"].each do |parent|
       parent["versions"].each do |version|
+        # Collect just the "kind"
         @counted_iplayer[version["kind"]] += 1
         if @counted_iplayer[parent["guidance"]]
+          # And grab the parents "guidance" message
           @counted_iplayer["Guidance #{parent["guidance"]}"] += 1
         end
       end
@@ -173,8 +214,8 @@ class BBC
   def printSingleNewsEntryInfo( new_index , new_parent , new_version )
     collectNewsEntryStats(new_version)
     if new_version["content"]["iChefUrl"]
-      temp_background_image = "#{new_version["content"]["iChefUrl"].sub("$recipe", "976x549")}"
-      @fileHtml.puts "<div class='entry' style='background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{temp_background_image})'>"
+      temp_image = "#{new_version["content"]["iChefUrl"].sub("$recipe", "976x549")}"
+      @fileHtml.puts "<div class='entry' style='background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{temp_image})'>"
     else
       @fileHtml.puts "<div class='entry'>"
     end
@@ -197,9 +238,9 @@ class BBC
     createNewsArticleLink( new_parent )
 
     if new_version["content"]["type"] == "bbc.mobile.news.audio"
-      createCookBookLink( "news" , temp_background_image, new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "radioProgramme" )
+      createCookBookLink( "news" , temp_image, new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "radioProgramme" )
     else
-      createCookBookLink( "news" , temp_background_image, new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "programme")
+      createCookBookLink( "news" , temp_image, new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "programme")
     end
 
     createAvailabilityToolLink( new_version["content"]["externalId"] )
@@ -207,28 +248,29 @@ class BBC
     if new_version["content"]["type"] == "bbc.mobile.news.audio"
       @fileHtml.puts "<li class='news_audio_flag'>AUDIO</li>"
     end
-
     @fileHtml.puts "</ul></div>"
   end
 
   #---------------------------------------------------------------------------------
 
-  def printAllNewsVpids( new_title , new_hash )
+  def printNewsVpids( new_title , new_hash )
     index , external_trevor_links, entry_vpids = 0 , [], []
     printNewsHeader( new_title )
+
     new_hash["relations"].each do |parent|
       parent["content"]["relations"].each do |version|
-
-        # Nake a link from parent we may have to use
+        # Make a link from parent we may have to use in search of AUDIO
         parent_link = "http://trevor-producer.api.bbci.co.uk/content#{parent["content"]["id"]}"
-
-        # If current entry has an externalID (vpid) simply print it out and its info to the HTML page
+        #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        # IF the current entry has an externalID (vpid) simply print it out and its info to the HTML page
+        #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         if version["content"]["externalId"] and not entry_vpids.include? version["content"]["externalId"]
           entry_vpids.push( version["content"]["externalId"] )
           index += 1
           printSingleNewsEntryInfo( index , parent["content"]["id"] , version )
-
-        # Else if there is no externalId and we haven't used the link before then we visit it to check external Trevor link for audio vpids!
+        #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        # Else if there is NO externalId and we haven't used the link before then we visit it to check external Trevor link for AUDIO vpids!
+        #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         elsif not version["content"]["externalId"] and not external_trevor_links.include? parent_link
           @website_resp = Net::HTTP.get_response(URI.parse(parent_link))
           @website_data = @website_resp.body
@@ -238,11 +280,12 @@ class BBC
           external_trevor_links.push(parent_link)
 
           # This loop is for AUDIO since its stored differently in TREVOR
-          temp_hash["relations"].each do |audio|
-            if audio["content"]["externalId"] and not entry_vpids.include? audio["content"]["externalId"] and audio["content"]["duration"] > 1
-              entry_vpids.push( audio["content"]["externalId"] )
+          temp_hash["relations"].each do |audio_hash|
+            # If its an audio vpid, a vpid we haven't pushed before AND duration is greater than 0 (not a stream!) then grab it!
+            if audio_hash["content"]["externalId"] and not entry_vpids.include? audio_hash["content"]["externalId"] and audio_hash["content"]["duration"] > 1
+              entry_vpids.push( audio_hash["content"]["externalId"] )
               index += 1
-              printSingleNewsEntryInfo( index , parent["content"]["id"] , audio )
+              printSingleNewsEntryInfo( index , parent["content"]["id"] , audio_hash )
             end
           end
         end
@@ -252,10 +295,11 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
-  def printAllIplayerVpids( new_title , new_hash )
+  def printIplayerVpids( new_title , new_hash )
     index = 0
     collectIplayerEntryStats( new_hash )
     printIplayerHeader( new_title )
+
     new_hash["group_episodes"]["elements"].each do |parent|
       parent["versions"].each do |version|
         if parent["images"]["standard"]
@@ -267,10 +311,10 @@ class BBC
         @fileHtml.puts "<p>#{index+=1}</p>"
         @fileHtml.puts "<ul>"
         @fileHtml.puts "<li class='title'>    #{parent["title"]}               </li>"
-        @fileHtml.puts "<li><hr></li>"
+        @fileHtml.puts "<li><hr>                                               </li>"
         @fileHtml.puts "<li>Vpid :            #{createPipsLink(version["id"])} </li>"
         @fileHtml.puts "<li>Parent :          #{createPipsLink(parent["id"])}  </li>"
-        @fileHtml.puts "<li><hr></li>"
+        @fileHtml.puts "<li><hr>                                               </li>"
         @fileHtml.puts "<li>Kind :            #{version["kind"]}               </li>"
         @fileHtml.puts "<li>Credits :         #{parent["has_credits"]}         </li>"
         @fileHtml.puts "<li>HD :              #{version["hd"]}                 </li>"
@@ -295,56 +339,14 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
-  def printIplayerSummary()
-    @fileHtml.puts '<div id="iplayer_summary">'
-    @fileHtml.puts "<h3>Iplayer</h3>"
-    @fileHtml.puts "<ul>"
-    @counted_iplayer = Hash[@counted_iplayer.map {|k,v| [k,v.to_s] }]
-    temp = Hash[ @counted_iplayer.sort_by { |key, val| key } ]
-    temp.each do |key,value|
-    @fileHtml.puts "<li class='stat'>#{key}</li>" # Will include #{value} in future when I've fixed it
-    end
-    @fileHtml.puts "</ul>"
-    @fileHtml.puts "</div>"
-    puts @counted_iplayer
-  end
-
-  #---------------------------------------------------------------------------------
-
-  def printNewsSummary()
-    @fileHtml.puts '<div id="news_summary">'
-    @fileHtml.puts "<h3>News</h3>"
-    @fileHtml.puts "<ul>"
-    @counted_news = Hash[@counted_news.map {|k,v| [k,v.to_s] }]
-    temp = Hash[ @counted_news.sort_by { |key, val| key } ]
-    temp.each do |key,value|
-    @fileHtml.puts "<li class='stat'>#{key}</li>" # Will include #{value} in future when I've fixed it
-    end
-    @fileHtml.puts "</ul>"
-    @fileHtml.puts "</div>"
-    puts @counted_news
-  end
-
-  #---------------------------------------------------------------------------------
-
-  def printAllStats()
-    @fileHtml.puts '<div id="stats_summary">'
-    @fileHtml.puts "<p>Scanner has detected on the BBC site <b>right now</b> there are vpids with properties...</p>"
-    printNewsSummary()
-    printIplayerSummary()
-    @fileHtml.puts "</div>"
-  end
-
-  #---------------------------------------------------------------------------------
-
   def getAndPrint( new_product , new_title , new_link )
     @website_resp = Net::HTTP.get_response(URI.parse(new_link))
     @website_data = @website_resp.body
     @hash = JSON.parse(@website_data)
     if new_product == "NEWS"
-      printAllNewsVpids( new_title , @hash )
+      printNewsVpids( new_title , @hash )
     elsif new_product == "IPLAYER"
-      printAllIplayerVpids( new_title , @hash )
+      printIplayerVpids( new_title , @hash )
     end
   end
 end
