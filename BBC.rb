@@ -27,7 +27,7 @@ class BBC
       </div>
       <div id="wrapper">
         <p>Welcome!</p>
-        <p>BBC Scanner outputs the current video and audio catalogue of BBC Iplayer and BBC News!</p>
+        <p>BBC Scanner outputs the current video + audio catalogue of iPlayer and BBC News!</p>
         <p>Data is loaded and filtered from
         <a href="https://confluence.dev.bbc.co.uk/display/~jamie.pitts@bbc.co.uk/Trevor+Example+Endpoints" target="_blank">TREVOR</a>
         and
@@ -55,7 +55,7 @@ class BBC
 
   def printAllPagesCombinedStats()
     @fileHtml.puts '<div id="stats_summary">'
-    @fileHtml.puts "<p>Scanner has detected on the BBC site <b>right now</b> there are vpids with properties...</p>"
+    @fileHtml.puts "<p>Scanner has detected <b>right now</b> there are vpids with properties -</p>"
     printNewsSummary()
     printIplayerSummary()
     @fileHtml.puts "</div>"
@@ -75,7 +75,6 @@ class BBC
     end
     @fileHtml.puts "</ul>"
     @fileHtml.puts "</div>"
-    puts @counted_iplayer
   end
 
   #---------------------------------------------------------------------------------
@@ -88,11 +87,12 @@ class BBC
     # Sort it alphabetically so it'll be easier to read in the final HTML output
     temp = Hash[ @counted_news.sort_by { |key, val| key } ]
     temp.each do |key,value|
-    @fileHtml.puts "<li class='stat'>#{key}</li>" # Will include #{value} in future when I've figured out what's going on properly with TREVOR
+      if key != ""
+        @fileHtml.puts "<li class='stat'>#{key} = #{value}</li>"
+      end
     end
     @fileHtml.puts "</ul>"
     @fileHtml.puts "</div>"
-    puts @counted_news
   end
 
   #---------------------------------------------------------------------------------
@@ -157,7 +157,7 @@ class BBC
   #---------------------------------------------------------------------------------
 
   def createAvailabilityToolLink( new_pid )
-     @fileHtml.puts "<li><a href='http://media-availability-tool.tools.bbc.co.uk/#{new_pid}?mediator=http%3A%2F%2Fopen.live.bbc.co.uk'
+     @fileHtml.puts "<li><a href='http://media-availability.tools.bbc.co.uk/#{new_pid}?mediator=http%3A%2F%2Fopen.live.bbc.co.uk'
      target='_blank'>Availability Link</a></li>"
   end
 
@@ -187,22 +187,20 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
-  def collectNewsEntryStats( new_version )
-    @counted_news["Type       #{new_version["content"]["type"].sub( "bbc.mobile.news." , "")} "] += 1
-    @counted_news["Available  #{new_version["content"]["isAvailable"]}"] += 1
-    @counted_news["Guidance   #{new_version["content"]["guidance"]}"] += 1
+  def collectCurrentNewsEntryStats( new_version )
+    @counted_news["#{new_version["content"]["guidance"]}"] += 1
     @counted_news["Embeddable #{new_version["content"]["isEmbeddable"]}"] += 1
   end
 
   #---------------------------------------------------------------------------------
 
-  def collectIplayerEntryStats( new_hash )
+  def collectCurrentIplayerEntryStats( new_hash )
     new_hash["group_episodes"]["elements"].each do |parent|
       parent["versions"].each do |version|
-        # Collect just the "kind"
+        # Collect just the "kind" as it's the only real useful info we want
         @counted_iplayer[version["kind"]] += 1
         if @counted_iplayer[parent["guidance"]]
-          # And grab the parents "guidance" message
+          # And grab the parents "guidance" message as it's the one the user sees on an Iplayer page
           @counted_iplayer["Guidance #{parent["guidance"]}"] += 1
         end
       end
@@ -211,14 +209,30 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
-  def printSingleNewsEntryInfo( new_index , new_parent , new_version )
-    collectNewsEntryStats(new_version)
-    if new_version["content"]["iChefUrl"]
-      temp_image = "#{new_version["content"]["iChefUrl"].sub("$recipe", "976x549")}"
-      @fileHtml.puts "<div class='entry' style='background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{temp_image})'>"
+  def assignBackgroundImage( new_ichef_url )
+    new_image = ""
+    # Example NEWS ichef URL - http://ichef.bbci.co.uk/images/ic/$recipe/p04l3rkg.jpg
+    if new_ichef_url =~ /\$recipe/
+      puts "NEWS ICHEF -> #{new_ichef_url}"
+      new_image = "#{new_ichef_url.sub("$recipe", "976x549")}"
+      @fileHtml.puts "<div class='entry' style='background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{new_image})'>"
+    # Example IPLAYER ichef URL - https://ichef.bbci.co.uk/images/ic/{recipe}/p04swgkh.jpg
+    elsif new_ichef_url =~ /{recipe}/i
+      puts "IPLAYER ICHEF -> #{new_ichef_url}"
+      new_image = "#{new_ichef_url.sub("{recipe}", "976x549")}"
+      @fileHtml.puts "<div class='entry' style='background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{new_image})'>"
+    # There's no image, might put in a funny place-holder there if I find one...
     else
       @fileHtml.puts "<div class='entry'>"
     end
+    return new_image
+  end
+
+  #---------------------------------------------------------------------------------
+
+  def printSingleNewsEntryInfo( new_index , new_parent , new_version )
+    collectCurrentNewsEntryStats( new_version )
+    background_image = assignBackgroundImage( new_version["content"]["iChefUrl"] )
     @fileHtml.puts "<p>#{new_index}</p>"
     @fileHtml.puts "<ul>"
     @fileHtml.puts "<li class='caption'> #{new_version["content"]["caption"]}                             </li>"
@@ -229,25 +243,16 @@ class BBC
     @fileHtml.puts "<li>Embeddable :     #{new_version["content"]["isEmbeddable"]}                        </li>"
     @fileHtml.puts "<li>Available :      #{new_version["content"]["isAvailable"]}                         </li>"
     @fileHtml.puts "<li>Duration :       #{new_version["content"]["duration"]/1000} secs                  </li>"
-
-    if new_version["content"]["guidance"]
-      @fileHtml.puts "<li>Guidance : #{new_version["content"]["guidance"]}</li>"
-    end
-
+    @fileHtml.puts "<li>Guidance :       #{new_version["content"]["guidance"]}</li>" if new_version["content"]["guidance"]
     @fileHtml.puts "<li><hr></li>"
     createNewsArticleLink( new_parent )
-
     if new_version["content"]["type"] == "bbc.mobile.news.audio"
-      createCookBookLink( "news" , temp_image, new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "radioProgramme" )
+      createCookBookLink( "news" , background_image , new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "radioProgramme" )
     else
-      createCookBookLink( "news" , temp_image, new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "programme")
+      createCookBookLink( "news" , background_image , new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "programme" )
     end
-
     createAvailabilityToolLink( new_version["content"]["externalId"] )
-
-    if new_version["content"]["type"] == "bbc.mobile.news.audio"
-      @fileHtml.puts "<li class='news_audio_flag'>AUDIO</li>"
-    end
+    @fileHtml.puts "<li class='news_audio_flag'>AUDIO</li>" if new_version["content"]["type"] == "bbc.mobile.news.audio"
     @fileHtml.puts "</ul></div>"
   end
 
@@ -268,9 +273,9 @@ class BBC
           entry_vpids.push( version["content"]["externalId"] )
           index += 1
           printSingleNewsEntryInfo( index , parent["content"]["id"] , version )
-        #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        # Else if there is NO externalId and we haven't used the link before then we visit it to check external Trevor link for AUDIO vpids!
-        #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        # Else if there is NO externalId and we haven't used the link before then we visit it to check external Trevor links for AUDIO vpids!
+        #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         elsif not version["content"]["externalId"] and not external_trevor_links.include? parent_link
           @website_resp = Net::HTTP.get_response(URI.parse(parent_link))
           @website_data = @website_resp.body
@@ -297,17 +302,11 @@ class BBC
 
   def printIplayerVpids( new_title , new_hash )
     index = 0
-    collectIplayerEntryStats( new_hash )
+    collectCurrentIplayerEntryStats( new_hash )
     printIplayerHeader( new_title )
-
     new_hash["group_episodes"]["elements"].each do |parent|
       parent["versions"].each do |version|
-        if parent["images"]["standard"]
-          temp_image = "#{parent["images"]["standard"].sub("{recipe}", "976x549")}"
-          @fileHtml.puts "<div class='entry' style='background-image: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{temp_image})'>"
-        else
-          @fileHtml.puts "<div class='entry'>"
-        end
+        background_image = assignBackgroundImage( parent["images"]["standard"] )
         @fileHtml.puts "<p>#{index+=1}</p>"
         @fileHtml.puts "<ul>"
         @fileHtml.puts "<li class='title'>    #{parent["title"]}               </li>"
@@ -329,7 +328,7 @@ class BBC
         end
         @fileHtml.puts "<li><hr></li>"
         createIplayerLink( parent["id"] , version["kind"] )
-        createCookBookLink( "iplayer" , temp_image , parent["title"] , temp_guidance , version["id"] , "programme" )
+        createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
         createAvailabilityToolLink (version["id"] )
         createIplayerKindFlag( version["kind"] )
         @fileHtml.puts "</ul></div>"

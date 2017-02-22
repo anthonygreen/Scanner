@@ -38,22 +38,22 @@ body
 
 #side_links li
 {
-   	list-style 		   : none;
-    border-bottom 	 : 1px solid grey;
-   	padding          : 7px;
-   	background-color : #333333;
-   	color 		  	   : white;
+ 	list-style 		   : none;
+  border-bottom 	 : 1px solid grey;
+ 	padding          : 7px;
+ 	background-color : #333333;
+ 	color 		  	   : white;
 }
 
 #side_links a
 {
-   	color 			    : white;
-   	text-decoration : none;
+	color 			    : white;
+	text-decoration : none;
 }
 
 #side_links a:hover
 {
-   	text-decoration : underline;
+ 	text-decoration : underline;
 }
 
 h1
@@ -82,7 +82,7 @@ h1
 	position : absolute;
 	top 		 : -12px;
 	left		 : 48%;
-	width    : 800px;
+	width    : 900px;
   display  : flex;
 }
 
@@ -90,7 +90,8 @@ h1
 {
 	position : relative;
 	top      : 28px;
-	left     : -50%;
+	left     : -35%;
+	width    : 550px;
 	padding  : 7px;
   flex     : 1;
 }
@@ -99,7 +100,7 @@ h1
 {
 	position : relative;
 	top      : 28px;
-	left     : -55%;
+	left     : -40%;
 	padding  : 7px;
 	flex     : 1;
 }
@@ -130,7 +131,7 @@ h1
 
 .entry:hover
 {
-    border : 1px solid black;
+  border : 1px solid black;
 }
 
 .entry p
