@@ -7,7 +7,7 @@ require 'time'
 class BBC
 
   def initialize()
-    @website_resp, @website_data, @hash, @side_links, @counted_iplayer, @counted_news = "", "", "", [] , Hash.new(0), Hash.new(0)
+    @side_links, @iplayer_stats, @news_stats = [] , Hash.new(0), Hash.new(0)
   end
 
   #---------------------------------------------------------------------------------
@@ -67,9 +67,9 @@ class BBC
     @fileHtml.puts '<div id="iplayer_summary">'
     @fileHtml.puts "<h3>Iplayer</h3>"
     @fileHtml.puts "<ul>"
-    @counted_iplayer = Hash[@counted_iplayer.map {|k,v| [k,v.to_s] }]
+    @iplayer_stats = Hash[@iplayer_stats.map {|k,v| [k,v.to_s] }]
     # Sort it alphabetically so it'll be easier to read in the final HTML output
-    temp = Hash[ @counted_iplayer.sort_by { |key, val| key } ]
+    temp = Hash[ @iplayer_stats.sort_by { |key, val| key } ]
     temp.each do |key,value|
     @fileHtml.puts "<li class='stat'>#{key} = #{value}</li>"
     end
@@ -83,9 +83,9 @@ class BBC
     @fileHtml.puts '<div id="news_summary">'
     @fileHtml.puts "<h3>News</h3>"
     @fileHtml.puts "<ul>"
-    @counted_news = Hash[@counted_news.map {|k,v| [k,v.to_s] }]
+    @news_stats = Hash[@news_stats.map {|k,v| [k,v.to_s] }]
     # Sort it alphabetically so it'll be easier to read in the final HTML output
-    temp = Hash[ @counted_news.sort_by { |key, val| key } ]
+    temp = Hash[ @news_stats.sort_by { |key, val| key } ]
     temp.each do |key,value|
       if key != ""
         @fileHtml.puts "<li class='stat'>#{key} = #{value}</li>"
@@ -188,8 +188,8 @@ class BBC
   #---------------------------------------------------------------------------------
 
   def collectCurrentNewsEntryStats( new_version )
-    @counted_news["#{new_version["content"]["guidance"]}"] += 1
-    @counted_news["Embeddable #{new_version["content"]["isEmbeddable"]}"] += 1
+    @news_stats["#{new_version["content"]["guidance"]}"] += 1
+    @news_stats["Embeddable #{new_version["content"]["isEmbeddable"]}"] += 1
   end
 
   #---------------------------------------------------------------------------------
@@ -317,7 +317,7 @@ class BBC
           @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]} </li>"
         end
         @fileHtml.puts "<li><hr></li>"
-        @counted_iplayer[version["kind"]] += 1
+        @iplayer_stats[version["kind"]] += 1
         createIplayerLink( parent["id"] , version["kind"] )
         createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
         createAvailabilityToolLink (version["id"] )
@@ -353,7 +353,7 @@ class BBC
             @fileHtml.puts "<li>Download :        #{x["download"]}                  </li>"
             @fileHtml.puts "<li>Duration :        #{x["duration"]["text"]}          </li>"
             @fileHtml.puts "<li><hr></li>"
-            @counted_iplayer[x["kind"]] += 1
+            @iplayer_stats[x["kind"]] += 1
             createIplayerLink( parent["id"] , x["kind"] )
             createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , x["id"] , "programme" )
             createAvailabilityToolLink (x["id"] )
@@ -390,7 +390,7 @@ class BBC
            @fileHtml.puts "<li>Download :        #{x["download"]}                  </li>"
            @fileHtml.puts "<li>Duration :        #{x["duration"]["text"]}          </li>"
            @fileHtml.puts "<li><hr></li>"
-           @counted_iplayer[x["kind"]] += 1
+           @iplayer_stats[x["kind"]] += 1
            createIplayerLink( parent["id"] , x["kind"] )
            createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , x["id"] , "programme" )
            createAvailabilityToolLink (x["id"] )
