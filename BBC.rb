@@ -194,21 +194,6 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
-  def collectCurrentIplayerEntryStats( new_hash )
-    new_hash["group_episodes"]["elements"].each do |parent|
-      parent["versions"].each do |version|
-        # Collect just the "kind" as it's the only real useful info we want
-        @counted_iplayer[version["kind"]] += 1
-        if @counted_iplayer[parent["guidance"]]
-          # And grab the parents "guidance" message as it's the one the user sees on an Iplayer page
-          @counted_iplayer["Guidance #{parent["guidance"]}"] += 1
-        end
-      end
-    end
-  end
-
-  #---------------------------------------------------------------------------------
-
   def assignBackgroundImage( new_ichef_url )
     new_image = ""
     # Example NEWS ichef URL - http://ichef.bbci.co.uk/images/ic/$recipe/p04l3rkg.jpg
@@ -258,11 +243,14 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
-  def printNewsVpids( new_title , new_hash )
+  def printNewsVpids( new_title , new_link )
+    website_resp = Net::HTTP.get_response(URI.parse(new_link))
+    website_data = website_resp.body
+    hash = JSON.parse(website_data)
     index , external_trevor_links, entry_vpids = 0 , [], []
     printNewsHeader( new_title )
 
-    new_hash["relations"].each do |parent|
+    hash["relations"].each do |parent|
       parent["content"]["relations"].each do |version|
         # Make a link from parent we may have to use in search of AUDIO
         parent_link = "http://trevor-producer.api.bbci.co.uk/content#{parent["content"]["id"]}"
@@ -300,11 +288,13 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
-  def printIplayerVpids( new_title , new_hash )
+  def printIplayerVpids( new_title , new_link )
     index = 0
-    collectCurrentIplayerEntryStats( new_hash )
+    website_resp = Net::HTTP.get_response(URI.parse(new_link))
+    website_data = website_resp.body
+    hash = JSON.parse(website_data)
     printIplayerHeader( new_title )
-    new_hash["group_episodes"]["elements"].each do |parent|
+    hash["group_episodes"]["elements"].each do |parent|
       parent["versions"].each do |version|
         background_image = assignBackgroundImage( parent["images"]["standard"] )
         @fileHtml.puts "<p>#{index+=1}</p>"
@@ -327,6 +317,7 @@ class BBC
           @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]} </li>"
         end
         @fileHtml.puts "<li><hr></li>"
+        @counted_iplayer[version["kind"]] += 1
         createIplayerLink( parent["id"] , version["kind"] )
         createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
         createAvailabilityToolLink (version["id"] )
@@ -338,14 +329,76 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
-  def getAndPrint( new_product , new_title , new_link )
-    @website_resp = Net::HTTP.get_response(URI.parse(new_link))
-    @website_data = @website_resp.body
-    @hash = JSON.parse(@website_data)
-    if new_product == "NEWS"
-      printNewsVpids( new_title , @hash )
-    elsif new_product == "IPLAYER"
-      printIplayerVpids( new_title , @hash )
+ def printIplayerTypeVpids( new_title , new_link , new_kind )
+   index = 0
+   website_resp = Net::HTTP.get_response(URI.parse(new_link))
+   website_data = website_resp.body
+   hash = JSON.parse(website_data)
+   printIplayerHeader( new_title )
+   hash["category_programmes"]["elements"].each do |parent|
+     parent["initial_children"].each do |child|
+        child["versions"].each do |x|
+          if x["kind"] == new_kind
+            temp_guidance="derp"
+            background_image = assignBackgroundImage( parent["images"]["standard"] )
+            @fileHtml.puts "<p>#{index+=1}</p>"
+            @fileHtml.puts "<ul>"
+            @fileHtml.puts "<li class='title'>    #{parent["title"]}                </li>"
+            @fileHtml.puts "<li><hr>                                                </li>"
+            @fileHtml.puts "<li>Vpid :            #{createPipsLink(x["id"])}        </li>"
+            @fileHtml.puts "<li>Parent :          #{createPipsLink(parent["id"])}   </li>"
+            @fileHtml.puts "<li><hr>                                                </li>"
+            @fileHtml.puts "<li>Kind :            #{x["kind"]}                      </li>"
+            @fileHtml.puts "<li>HD :              #{x["hd"]}                        </li>"
+            @fileHtml.puts "<li>Download :        #{x["download"]}                  </li>"
+            @fileHtml.puts "<li>Duration :        #{x["duration"]["text"]}          </li>"
+            @fileHtml.puts "<li><hr></li>"
+            @counted_iplayer[x["kind"]] += 1
+            createIplayerLink( parent["id"] , x["kind"] )
+            createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , x["id"] , "programme" )
+            createAvailabilityToolLink (x["id"] )
+            createIplayerKindFlag( x["kind"] )
+            @fileHtml.puts "</ul></div>"
+          end
+        end
+      end
+   end
+ end
+
+ #---------------------------------------------------------------------------------
+
+  def printIplayerChannelVpids( new_title , new_link )
+    index = 0
+    website_resp = Net::HTTP.get_response(URI.parse(new_link))
+    website_data = website_resp.body
+    hash = JSON.parse(website_data)
+    printIplayerHeader( new_title )
+    hash["channel_programmes"]["elements"].each do |parent|
+      parent["initial_children"].each do |child|
+         child["versions"].each do |x|
+           temp_guidance="derp"
+           background_image = assignBackgroundImage( parent["images"]["standard"] )
+           @fileHtml.puts "<p>#{index+=1}</p>"
+           @fileHtml.puts "<ul>"
+           @fileHtml.puts "<li class='title'>    #{parent["title"]}                </li>"
+           @fileHtml.puts "<li><hr>                                                </li>"
+           @fileHtml.puts "<li>Vpid :            #{createPipsLink(x["id"])}        </li>"
+           @fileHtml.puts "<li>Parent :          #{createPipsLink(parent["id"])}   </li>"
+           @fileHtml.puts "<li><hr>                                                </li>"
+           @fileHtml.puts "<li>Kind :            #{x["kind"]}                      </li>"
+           @fileHtml.puts "<li>HD :              #{x["hd"]}                        </li>"
+           @fileHtml.puts "<li>Download :        #{x["download"]}                  </li>"
+           @fileHtml.puts "<li>Duration :        #{x["duration"]["text"]}          </li>"
+           @fileHtml.puts "<li><hr></li>"
+           @counted_iplayer[x["kind"]] += 1
+           createIplayerLink( parent["id"] , x["kind"] )
+           createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , x["id"] , "programme" )
+           createAvailabilityToolLink (x["id"] )
+           createIplayerKindFlag( x["kind"] )
+           @fileHtml.puts "</ul></div>"
+         end
+       end
     end
   end
+
 end
