@@ -20,7 +20,6 @@ scanner.printIplayerTypeVpids( "iPlayer - Audio Described"  , "http://ibl.api.bb
 scanner.printIplayerTypeVpids( "iPlayer - Signed"           , "http://ibl.api.bbci.co.uk/ibl/v1/categories/signed/programmes"          , "signed"          )
 
 scanner.printIplayerChannelVpids( "iPlayer - Cbeebies"    , "https://ibl.api.bbci.co.uk/ibl/v1/channels/cbeebies/programmes"       )
-scanner.printIplayerChannelVpids( "iPlayer - CBBC"        , "https://ibl.api.bbci.co.uk/ibl/v1/channels/cbbc/programmes"           )
 scanner.printIplayerChannelVpids( "iPlayer - BBC Alba"    , "https://ibl.api.bbci.co.uk/ibl/v1/channels/bbc_alba/programmes"       )
 scanner.printIplayerChannelVpids( "iPlayer - S4C"         , "https://ibl.api.bbci.co.uk/ibl/v1/channels/s4cpbs/programmes"         )
 
