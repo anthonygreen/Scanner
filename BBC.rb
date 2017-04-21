@@ -27,7 +27,7 @@ class BBC
       </div>
       <div id="wrapper">
         <p>Welcome!</p>
-        <p>BBC Scanner outputs the current video + audio catalogue of iPlayer and BBC News!</p>
+        <p>Scanner outputs current video + audio vpids on iPlayer and News!</p>
         <p>Data is loaded and filtered from
         <a href="https://confluence.dev.bbc.co.uk/display/~jamie.pitts@bbc.co.uk/Trevor+Example+Endpoints" target="_blank">TREVOR</a>
         and
@@ -38,11 +38,13 @@ class BBC
   #---------------------------------------------------------------------------------
 
   def addHTMLSideLinks()
-    @fileHtml.puts "<div id='side_links'><ul>"
+    @fileHtml.puts "<div tabindex='0' id='drop_down'>
+    <div id='links'>
+    <ul>"
     @side_links.each do |user_heading|
       @fileHtml.puts "<li><a href='##{user_heading}'>#{user_heading}</a></li>"
     end
-    @fileHtml.puts "</ul></div>"
+    @fileHtml.puts "</ul></div></div>"
   end
 
   #---------------------------------------------------------------------------------
