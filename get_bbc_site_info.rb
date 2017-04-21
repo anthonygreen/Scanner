@@ -5,6 +5,7 @@ scanner = BBC.new
 iplayer_total = scanner.getIplayerTotalVpids()
 
 scanner.addHTMLheader()
+
 scanner.printNewsVpids( "News - Front Page"         , "http://trevor-producer.api.bbci.co.uk/content/cps/news/front_page"    )
 scanner.printNewsVpids( "News - Most Popular"       , "http://trevor-producer.api.bbci.co.uk/content/most_popular/news" 	   )
 scanner.printNewsVpids( "News - Technology"         , "http://trevor-producer.api.bbci.co.uk/content/cps/news/technology" 	 )

@@ -97,7 +97,7 @@ h1
   display        			: inline-block;
   vertical-align 			: top;
   border   	   			  : 1px solid #B3B6BF;
-  background-position : 50% 50%;
+  background-position : 50% 0%;
   background-color    : white;
 }
 
@@ -160,34 +160,62 @@ h1
   left     : 85%;
 }
 
+#drop_down:hover
+{
+	border-left    : 1px solid #CCCCCC;
+		border-right    : 1px solid #CCCCCC;
+}
+
 #drop_down:before
 {
-    content: "▼";
-		cursor: pointer;
-		font-weight: bold;
-		font-size: 16px;
+    content     : "▼";
+		cursor      : pointer;
+		font-weight : bold;
+		font-size   : 16px;
 }
 
 #drop_down:focus #links
 {
     /* content is visible if menu is 'opened' */
-    visibility: visible;
+    visibility : visible;
 }
 
 #links
 {
-    position: absolute;
-    z-index: 1000;
-		width : 210px;
-		background-color: white;
-		border: none;
-		color : black;
+    position         : absolute;
+    z-index          : 1000;
+		width            : 210px;
+		background-color : white;
+		border           : none;
+		color  					 : black;
     /* disable visibility by default, delay to enable clicks */
-    visibility: hidden;
-    transition: visibility 0.5s;
+    visibility       : hidden;
+    transition       : visibility 0.5s;
+}
+
+#links p
+{
+    position : relative;
+		left     : 10px;
+		width    : 80px;
+}
+
+#links li
+{
+	position : relative;
+	left     : -15px;
+	list-style 		   : none;
+	color : black;
+	text-decoration : none;
+}
+
+#links li:hover
+{
+		background-color : #CCCCCC;
 }
 
 #links a
 {
-		color : black;
+	text-decoration : none;
+	color : black;
 }
