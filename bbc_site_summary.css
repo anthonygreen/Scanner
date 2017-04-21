@@ -11,7 +11,7 @@ body
 	height			 		 : 50px;
 	margin-top		 	 : -17px;
 	margin-left		 	 : -8px;
-	z-index			 		 : 10;
+	z-index			 		 : 1;
 	opacity			 		 : 0.9;
 	background-color : white;
 	color       	 	 : black;
@@ -29,45 +29,18 @@ body
 	vertical-align : text-top;
 }
 
-#side_links
-{
-	position : fixed;
-  top      : 6.5%;
-  left     : -2%;
-}
-
-#side_links li
-{
- 	list-style 		   : none;
-  border-bottom 	 : 1px solid grey;
- 	padding          : 7px;
- 	background-color : #333333;
- 	color 		  	   : white;
-}
-
-#side_links a
-{
-	color 			    : white;
-	text-decoration : none;
-}
-
-#side_links a:hover
-{
- 	text-decoration : underline;
-}
-
 h1
 {
 	position : relative;
-	left     : 42%;
+	left     : 5%;
 }
 
 #wrapper
 {
 	position       : relative;
-	width          : 90%;
+	width          : 100%;
 	top            : 50px;
-	margin-left    : 14.5%;
+	margin-left    : 5%;
 	padding-bottom : 700px;
 }
 
@@ -112,7 +85,7 @@ h1
 
 .caption,.title
 {
-	font-size   : 15px;
+	font-size   : 14px;
 	font-weight : bold;
 }
 
@@ -120,11 +93,11 @@ h1
 {
 	position 	   				: relative;
 	width 		   				: 15%;
-	height 		   				: 500px;
+	height 		   				: 70%;
   display        			: inline-block;
   vertical-align 			: top;
   border   	   			  : 1px solid #B3B6BF;
-  background-position : 50% 50%;
+  background-position : 50% 0%;
   background-color    : white;
 }
 
@@ -177,4 +150,72 @@ h1
 	width            : 34px;
 	background-color : red;
 	color            : white;
+}
+
+#drop_down
+{
+	position : fixed;
+	z-index  : 1000;
+  top      : 10px;
+  left     : 85%;
+}
+
+#drop_down:hover
+{
+	border-left    : 1px solid #CCCCCC;
+		border-right    : 1px solid #CCCCCC;
+}
+
+#drop_down:before
+{
+    content     : "▼";
+		cursor      : pointer;
+		font-weight : bold;
+		font-size   : 16px;
+}
+
+#drop_down:focus #links
+{
+    /* content is visible if menu is 'opened' */
+    visibility : visible;
+}
+
+#links
+{
+    position         : absolute;
+    z-index          : 1000;
+		width            : 210px;
+		background-color : white;
+		border           : none;
+		color  					 : black;
+    /* disable visibility by default, delay to enable clicks */
+    visibility       : hidden;
+    transition       : visibility 0.5s;
+}
+
+#links p
+{
+    position : relative;
+		left     : 10px;
+		width    : 80px;
+}
+
+#links li
+{
+	position : relative;
+	left     : -15px;
+	list-style 		   : none;
+	color : black;
+	text-decoration : none;
+}
+
+#links li:hover
+{
+		background-color : #CCCCCC;
+}
+
+#links a
+{
+	text-decoration : none;
+	color : black;
 }

@@ -5,6 +5,7 @@ scanner = BBC.new
 iplayer_total = scanner.getIplayerTotalVpids()
 
 scanner.addHTMLheader()
+
 scanner.printNewsVpids( "News - Front Page"         , "http://trevor-producer.api.bbci.co.uk/content/cps/news/front_page"    )
 scanner.printNewsVpids( "News - Most Popular"       , "http://trevor-producer.api.bbci.co.uk/content/most_popular/news" 	   )
 scanner.printNewsVpids( "News - Technology"         , "http://trevor-producer.api.bbci.co.uk/content/cps/news/technology" 	 )
@@ -19,9 +20,9 @@ scanner.printIplayerVpids( "iPlayer - Least Popular"    , "https://ibl.api.bbci.
 scanner.printIplayerTypeVpids( "iPlayer - Audio Described"  , "http://ibl.api.bbci.co.uk/ibl/v1/categories/audio-described/programmes" , "audio-described" )
 scanner.printIplayerTypeVpids( "iPlayer - Signed"           , "http://ibl.api.bbci.co.uk/ibl/v1/categories/signed/programmes"          , "signed"          )
 
-scanner.printIplayerChannelVpids( "iPlayer - Cbeebies"    , "https://ibl.api.bbci.co.uk/ibl/v1/channels/cbeebies/programmes"       )
-scanner.printIplayerChannelVpids( "iPlayer - BBC Alba"    , "https://ibl.api.bbci.co.uk/ibl/v1/channels/bbc_alba/programmes"       )
-scanner.printIplayerChannelVpids( "iPlayer - S4C"         , "https://ibl.api.bbci.co.uk/ibl/v1/channels/s4cpbs/programmes"         )
+scanner.printIplayerChannelVpids( "iPlayer - Cbeebies"    , "https://ibl.api.bbci.co.uk/ibl/v1/channels/cbeebies/programmes" )
+scanner.printIplayerChannelVpids( "iPlayer - BBC Alba"    , "https://ibl.api.bbci.co.uk/ibl/v1/channels/bbc_alba/programmes" )
+scanner.printIplayerChannelVpids( "iPlayer - S4C"         , "https://ibl.api.bbci.co.uk/ibl/v1/channels/s4cpbs/programmes"   )
 
 scanner.printAllPagesCombinedStats()
 scanner.addHTMLSideLinks()

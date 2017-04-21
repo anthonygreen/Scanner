@@ -6,6 +6,8 @@ require 'time'
 
 class BBC
 
+  #---------------------------------------------------------------------------------
+
   def initialize()
     @side_links, @iplayer_stats, @news_stats = [] , Hash.new(0), Hash.new(0)
   end
@@ -27,8 +29,8 @@ class BBC
       </div>
       <div id="wrapper">
         <p>Welcome!</p>
-        <p>BBC Scanner outputs the current video + audio catalogue of iPlayer and BBC News!</p>
-        <p>Data is loaded and filtered from
+        <p>Scanner outputs current video + audio vpids on iPlayer and News!</p>
+        <p>Data is loaded + filtered from
         <a href="https://confluence.dev.bbc.co.uk/display/~jamie.pitts@bbc.co.uk/Trevor+Example+Endpoints" target="_blank">TREVOR</a>
         and
         <a href="https://inspector.ibl.api.bbci.co.uk" target="_blank">IBL</a></p>'
@@ -38,11 +40,14 @@ class BBC
   #---------------------------------------------------------------------------------
 
   def addHTMLSideLinks()
-    @fileHtml.puts "<div id='side_links'><ul>"
+    @fileHtml.puts "<div tabindex='0' id='drop_down'>
+    <div id='links'>
+    <p>Available links</p>
+    <ul>"
     @side_links.each do |user_heading|
       @fileHtml.puts "<li><a href='##{user_heading}'>#{user_heading}</a></li>"
     end
-    @fileHtml.puts "</ul></div>"
+    @fileHtml.puts "</ul></div></div>"
   end
 
   #---------------------------------------------------------------------------------
@@ -329,7 +334,7 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
- def printIplayerTypeVpids( new_title , new_link , new_kind )
+  def printIplayerTypeVpids( new_title , new_link , new_kind )
    index = 0
    website_resp = Net::HTTP.get_response(URI.parse(new_link))
    website_data = website_resp.body
@@ -363,9 +368,9 @@ class BBC
         end
       end
    end
- end
+  end
 
- #---------------------------------------------------------------------------------
+  #---------------------------------------------------------------------------------
 
   def printIplayerChannelVpids( new_title , new_link )
     index = 0
@@ -375,30 +380,32 @@ class BBC
     printIplayerHeader( new_title )
     hash["channel_programmes"]["elements"].each do |parent|
       parent["initial_children"].each do |child|
-         child["versions"].each do |x|
+         child["versions"].each do |property|
            temp_guidance="derp"
            background_image = assignBackgroundImage( parent["images"]["standard"] )
            @fileHtml.puts "<p>#{index+=1}</p>"
            @fileHtml.puts "<ul>"
-           @fileHtml.puts "<li class='title'>    #{parent["title"]}                </li>"
-           @fileHtml.puts "<li><hr>                                                </li>"
-           @fileHtml.puts "<li>Vpid :            #{createPipsLink(x["id"])}        </li>"
-           @fileHtml.puts "<li>Parent :          #{createPipsLink(parent["id"])}   </li>"
-           @fileHtml.puts "<li><hr>                                                </li>"
-           @fileHtml.puts "<li>Kind :            #{x["kind"]}                      </li>"
-           @fileHtml.puts "<li>HD :              #{x["hd"]}                        </li>"
-           @fileHtml.puts "<li>Download :        #{x["download"]}                  </li>"
-           @fileHtml.puts "<li>Duration :        #{x["duration"]["text"]}          </li>"
+           @fileHtml.puts "<li class='title'>    #{parent["title"]}                       </li>"
+           @fileHtml.puts "<li><hr>                                                       </li>"
+           @fileHtml.puts "<li>Vpid :            #{createPipsLink(property["id"])}        </li>"
+           @fileHtml.puts "<li>Parent :          #{createPipsLink(parent["id"])}          </li>"
+           @fileHtml.puts "<li><hr>                                                       </li>"
+           @fileHtml.puts "<li>Kind :            #{property["kind"]}                      </li>"
+           @fileHtml.puts "<li>HD :              #{property["hd"]}                        </li>"
+           @fileHtml.puts "<li>Download :        #{property["download"]}                  </li>"
+           @fileHtml.puts "<li>Duration :        #{property["duration"]["text"]}          </li>"
            @fileHtml.puts "<li><hr></li>"
-           @iplayer_stats[x["kind"]] += 1
-           createIplayerLink( parent["id"] , x["kind"] )
-           createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , x["id"] , "programme" )
-           createAvailabilityToolLink (x["id"] )
-           createIplayerKindFlag( x["kind"] )
+           @iplayer_stats[property["kind"]] += 1
+           createIplayerLink( parent["id"] , property["kind"] )
+           createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , property["id"] , "programme" )
+           createAvailabilityToolLink (property["id"] )
+           createIplayerKindFlag( property["kind"] )
            @fileHtml.puts "</ul></div>"
          end
        end
     end
   end
+
+  #---------------------------------------------------------------------------------
 
 end
