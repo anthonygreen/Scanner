@@ -33,7 +33,8 @@ class BBC
         <p>Data is loaded + filtered from
         <a href="https://confluence.dev.bbc.co.uk/display/~jamie.pitts@bbc.co.uk/Trevor+Example+Endpoints" target="_blank">TREVOR</a>
         and
-        <a href="https://inspector.ibl.api.bbci.co.uk" target="_blank">IBL</a></p>'
+        <a href="https://inspector.ibl.api.bbci.co.uk" target="_blank">IBL</a></p>
+        <p>Any queries please contact <b>william.daly@bbc.co.uk</b></p>'
         @fileHtml.puts "<p>Latest scan took place at - <div id='scan_time'>#{Time.now.strftime("%A %e  %B %Y at %l:%M %p")}</div></p>"
   end
 
