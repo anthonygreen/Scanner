@@ -335,6 +335,49 @@ class BBC
 
   #---------------------------------------------------------------------------------
 
+  def printGuidanceIplayerVpids( new_title , new_link )
+    index = 0
+    website_resp = Net::HTTP.get_response(URI.parse(new_link))
+    website_data = website_resp.body
+    hash = JSON.parse(website_data)
+    printIplayerHeader( new_title )
+    hash["group_episodes"]["elements"].each do |parent|
+      parent["versions"].each do |version|
+        if parent["guidance"] == true
+          background_image = assignBackgroundImage( parent["images"]["standard"] )
+          @fileHtml.puts "<p>#{index+=1}</p>"
+          @fileHtml.puts "<ul>"
+          @fileHtml.puts "<li class='title'>    #{parent["title"]}               </li>"
+          @fileHtml.puts "<li><hr>                                               </li>"
+          @fileHtml.puts "<li>Vpid :            #{createPipsLink(version["id"])} </li>"
+          @fileHtml.puts "<li>Parent :          #{createPipsLink(parent["id"])}  </li>"
+          @fileHtml.puts "<li><hr>                                               </li>"
+          @fileHtml.puts "<li>Kind :            #{version["kind"]}               </li>"
+          @fileHtml.puts "<li>Credits :         #{parent["has_credits"]}         </li>"
+          @fileHtml.puts "<li>HD :              #{version["hd"]}                 </li>"
+          @fileHtml.puts "<li>Download :        #{version["download"]}           </li>"
+          @fileHtml.puts "<li>Duration :        #{version["duration"]["text"]}   </li>"
+          @fileHtml.puts "<li>Guidance :        #{parent["guidance"]}            </li>"
+          # There's a bug in IBL where a VPID may not display guidance despite its PARENT saying it does!
+          temp_guidance = ""
+          if parent["guidance"] == true and version["guidance"]
+            temp_guidance = version["guidance"]["text"]["medium"]
+            @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]} </li>"
+          end
+          @fileHtml.puts "<li><hr></li>"
+          @iplayer_stats[version["kind"]] += 1
+          createIplayerLink( parent["id"] , version["kind"] )
+          createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
+          createAvailabilityToolLink (version["id"] )
+          createIplayerKindFlag( version["kind"] )
+          @fileHtml.puts "</ul></div>"
+        end
+      end
+    end
+  end
+
+  #---------------------------------------------------------------------------------
+
   def printIplayerTypeVpids( new_title , new_link , new_kind )
    index = 0
    website_resp = Net::HTTP.get_response(URI.parse(new_link))

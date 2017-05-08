@@ -20,6 +20,8 @@ scanner.printIplayerVpids( "iPlayer - Least Popular"    , "https://ibl.api.bbci.
 scanner.printIplayerTypeVpids( "iPlayer - Audio Described"  , "http://ibl.api.bbci.co.uk/ibl/v1/categories/audio-described/programmes" , "audio-described" )
 scanner.printIplayerTypeVpids( "iPlayer - Signed"           , "http://ibl.api.bbci.co.uk/ibl/v1/categories/signed/programmes"          , "signed"          )
 
+scanner.printGuidanceIplayerVpids( "iPlayer - Guidance" , "https://ibl.api.bbci.co.uk/ibl/v1/groups/popular/episodes?per_page=40&page=1" )
+
 scanner.printIplayerChannelVpids( "iPlayer - Cbeebies"    , "https://ibl.api.bbci.co.uk/ibl/v1/channels/cbeebies/programmes" )
 scanner.printIplayerChannelVpids( "iPlayer - BBC Alba"    , "https://ibl.api.bbci.co.uk/ibl/v1/channels/bbc_alba/programmes" )
 scanner.printIplayerChannelVpids( "iPlayer - S4C"         , "https://ibl.api.bbci.co.uk/ibl/v1/channels/s4cpbs/programmes"   )
