@@ -46,7 +46,7 @@ class BBC
     <p>Available links</p>
     <ul>"
     @side_links.each do |user_heading|
-      @fileHtml.puts "<li><a href='##{user_heading}'>#{user_heading}</a></li>"
+      @fileHtml.puts "<li><a href='##{user_heading.delete(' ')}'>#{user_heading}</a></li>"
     end
     @fileHtml.puts "</ul></div></div>"
   end
@@ -104,16 +104,16 @@ class BBC
   #---------------------------------------------------------------------------------
 
   def printNewsHeader( new_title )
-    @fileHtml.puts "<div id='news_div'>"
-    @fileHtml.puts "<h2><img id='#{new_title}'src='images/news_icon.jpeg'/> #{new_title}</h2>"
+    @fileHtml.puts "<div id='#{new_title.delete(' ')}'>"
+    @fileHtml.puts "<h2><img id='image_#{new_title.delete(' ')}'src='images/news_icon.jpeg'/> #{new_title}</h2>"
     @side_links.push("#{new_title}")
   end
 
   #---------------------------------------------------------------------------------
 
   def printIplayerHeader( new_title )
-    @fileHtml.puts "<div id='iplayer_div'>"
-    @fileHtml.puts "<h2><img id='#{new_title}'src='images/iplayer_icon.jpeg'/> #{new_title}</h2>"
+    @fileHtml.puts "<div id='#{new_title.delete(' ')}'>"
+    @fileHtml.puts "<h2><img id='image_#{new_title.delete(' ')}'src='images/iplayer_icon.jpeg'/> #{new_title}</h2>"
     @side_links.push("#{new_title}")
   end
 
