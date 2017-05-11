@@ -170,7 +170,12 @@ class BBC
   #---------------------------------------------------------------------------------
 
   def createCookBookLink( new_product , new_image , new_title , new_guidance , new_version_id , new_kind )
-    smp_settings = { 'product' => new_product, 'superResponsive' => true }
+    smp_settings =
+    {
+      'product' => new_product,
+      'superResponsive' => true
+    }
+
     smp_playlist =
     {
       'holdingImageURL' => new_image,
@@ -184,6 +189,7 @@ class BBC
         }
       ]
     }
+
     # Need to encode settings + playlist so they can be passed into the browser TO the CookBook page successfully!
     encoded_settings = Base64.encode64(smp_settings.to_json).gsub("\n", '')
     encoded_playlist = Base64.encode64(smp_playlist.to_json).gsub("\n", '')
@@ -386,32 +392,39 @@ class BBC
    printIplayerHeader( new_title )
    hash["category_programmes"]["elements"].each do |parent|
      parent["initial_children"].each do |child|
-        child["versions"].each do |x|
-          if x["kind"] == new_kind
+        child["versions"].each do |version|
+          if version["kind"] == new_kind
             temp_guidance="derp"
             background_image = assignBackgroundImage( parent["images"]["standard"] )
             @fileHtml.puts "<p>#{index+=1}</p>"
             @fileHtml.puts "<ul>"
             @fileHtml.puts "<li class='title'>    #{parent["title"]}                </li>"
             @fileHtml.puts "<li><hr>                                                </li>"
-            @fileHtml.puts "<li>Vpid :            #{createPipsLink(x["id"])}        </li>"
+            @fileHtml.puts "<li>Vpid :            #{createPipsLink(version["id"])}  </li>"
             @fileHtml.puts "<li>Parent :          #{createPipsLink(parent["id"])}   </li>"
             @fileHtml.puts "<li><hr>                                                </li>"
-            @fileHtml.puts "<li>Kind :            #{x["kind"]}                      </li>"
-            @fileHtml.puts "<li>HD :              #{x["hd"]}                        </li>"
-            @fileHtml.puts "<li>Download :        #{x["download"]}                  </li>"
-            @fileHtml.puts "<li>Duration :        #{x["duration"]["text"]}          </li>"
+            @fileHtml.puts "<li>Kind :            #{version["kind"]}                </li>"
+            @fileHtml.puts "<li>Credits :         #{child["has_credits"]}           </li>" # Guidance located at a different level to POPULAR
+            @fileHtml.puts "<li>HD :              #{version["hd"]}                  </li>"
+            @fileHtml.puts "<li>Download :        #{version["download"]}            </li>"
+            @fileHtml.puts "<li>Duration :        #{version["duration"]["text"]}    </li>"
+            @fileHtml.puts "<li>Guidance :        #{child["guidance"]}              </li>" # Guidance located at a different level to POPULAR
+            # Guidance located at a different level to POPULAR
+            if child["guidance"] == true and version["guidance"]
+              temp_guidance = version["guidance"]["text"]["medium"]
+              @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]} </li>"
+            end
             @fileHtml.puts "<li><hr></li>"
-            @iplayer_stats[x["kind"]] += 1
-            createIplayerLink( parent["id"] , x["kind"] )
-            createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , x["id"] , "programme" )
-            createAvailabilityToolLink (x["id"] )
-            createIplayerKindFlag( x["kind"] )
+            @iplayer_stats[version["kind"]] += 1
+            createIplayerLink( parent["id"] , version["kind"] )
+            createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
+            createAvailabilityToolLink ( version["id"] )
+            createIplayerKindFlag( version["kind"] )
             @fileHtml.puts "</ul></div>"
           end
         end
       end
-   end
+    end
   end
 
   #---------------------------------------------------------------------------------
@@ -424,26 +437,33 @@ class BBC
     printIplayerHeader( new_title )
     hash["channel_programmes"]["elements"].each do |parent|
       parent["initial_children"].each do |child|
-         child["versions"].each do |property|
+         child["versions"].each do |version|
            temp_guidance="derp"
            background_image = assignBackgroundImage( parent["images"]["standard"] )
            @fileHtml.puts "<p>#{index+=1}</p>"
            @fileHtml.puts "<ul>"
-           @fileHtml.puts "<li class='title'>    #{parent["title"]}                       </li>"
-           @fileHtml.puts "<li><hr>                                                       </li>"
-           @fileHtml.puts "<li>Vpid :            #{createPipsLink(property["id"])}        </li>"
-           @fileHtml.puts "<li>Parent :          #{createPipsLink(parent["id"])}          </li>"
-           @fileHtml.puts "<li><hr>                                                       </li>"
-           @fileHtml.puts "<li>Kind :            #{property["kind"]}                      </li>"
-           @fileHtml.puts "<li>HD :              #{property["hd"]}                        </li>"
-           @fileHtml.puts "<li>Download :        #{property["download"]}                  </li>"
-           @fileHtml.puts "<li>Duration :        #{property["duration"]["text"]}          </li>"
+           @fileHtml.puts "<li class='title'>    #{parent["title"]}                </li>"
+           @fileHtml.puts "<li><hr>                                                </li>"
+           @fileHtml.puts "<li>Vpid :            #{createPipsLink(version["id"])}  </li>"
+           @fileHtml.puts "<li>Parent :          #{createPipsLink(parent["id"])}   </li>"
+           @fileHtml.puts "<li><hr>                                                </li>"
+           @fileHtml.puts "<li>Kind :            #{version["kind"]}                </li>"
+           @fileHtml.puts "<li>Credits :         #{child["has_credits"]}           </li>" # Guidance located at a different level to POPULAR
+           @fileHtml.puts "<li>HD :              #{version["hd"]}                  </li>"
+           @fileHtml.puts "<li>Download :        #{version["download"]}            </li>"
+           @fileHtml.puts "<li>Duration :        #{version["duration"]["text"]}    </li>"
+           @fileHtml.puts "<li>Guidance :        #{child["guidance"]}              </li>" # Guidance located at a different level to POPULAR
+           # Guidance located at a different level to POPULAR
+           if child["guidance"] == true and version["guidance"]
+             temp_guidance = version["guidance"]["text"]["medium"]
+             @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]} </li>"
+           end
            @fileHtml.puts "<li><hr></li>"
-           @iplayer_stats[property["kind"]] += 1
-           createIplayerLink( parent["id"] , property["kind"] )
-           createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , property["id"] , "programme" )
-           createAvailabilityToolLink (property["id"] )
-           createIplayerKindFlag( property["kind"] )
+           @iplayer_stats[version["kind"]] += 1
+           createIplayerLink( parent["id"] , version["kind"] )
+           createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
+           createAvailabilityToolLink ( version["id"] )
+           createIplayerKindFlag( version["kind"] )
            @fileHtml.puts "</ul></div>"
          end
        end
