@@ -13,7 +13,6 @@ scanner.printNewsVpids( "News - Politics"           , "http://trevor-producer.ap
 scanner.printNewsVpids( "News - Mundo Front Page"   , "http://trevor-producer.api.bbci.co.uk/content/cps/mundo/front_page" 	 )
 scanner.printNewsVpids( "News - Russian Front Page" , "http://trevor-producer.api.bbci.co.uk/content/cps/russian/front_page" )
 
-
 scanner.printIplayerVpids( "iPlayer - Most Popular"     , "https://ibl.api.bbci.co.uk/ibl/v1/groups/popular/episodes"                                              )
 scanner.printIplayerVpids( "iPlayer - Not Very Popular" , "https://ibl.api.bbci.co.uk/ibl/v1/groups/popular/episodes?per_page=20&page=#{(iplayer_total / 20) / 2}" )
 scanner.printIplayerVpids( "iPlayer - Least Popular"    , "https://ibl.api.bbci.co.uk/ibl/v1/groups/popular/episodes?per_page=20&page=#{iplayer_total / 20}"		   )
