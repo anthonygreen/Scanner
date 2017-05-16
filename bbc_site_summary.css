@@ -89,7 +89,7 @@ h1
 	font-weight : bold;
 }
 
-.entry
+.entry_style
 {
 	position 	   				: relative;
 	width 		   				: 15%;
@@ -101,19 +101,19 @@ h1
   background-color    : white;
 }
 
-.entry:hover
+.entry_style:hover
 {
   border : 1px solid black;
 }
 
-.entry p
+.entry_style p
 {
 	position : relative;
 	left     : 5px;
 	padding  : 4px;
 }
 
-.entry li
+.entry_style li
 {
 	position   : relative;
 	left       : -17px;
@@ -121,7 +121,7 @@ h1
 	list-style : none;
 }
 
-.entry hr
+.entry_style hr
 {
 	border: 1px dashed #B3B6BF;
 }

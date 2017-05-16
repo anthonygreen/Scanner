@@ -24,5 +24,5 @@ scanner.printIplayerChannelVpids( "iPlayer - BBC Alba"    , "https://ibl.api.bbc
 scanner.printIplayerChannelVpids( "iPlayer - S4C"         , "https://ibl.api.bbci.co.uk/ibl/v1/channels/s4cpbs/programmes"   )
 
 scanner.printAllPagesCombinedStats()
-scanner.addHTMLSideLinks()
+scanner.addNavBarLinks()
 scanner.addHTMLFooter()
