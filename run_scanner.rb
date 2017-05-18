@@ -1,19 +1,19 @@
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Author : william.daly@bbc.co.uk
-# Desc   : This is the file you run to initialise Scanner and for it to grab content
-#          Once Scanner has completed it will generate "index.html"
-#          If you want to add more content to be scanned then view comments below!
+# Desc   : This is the file you execute to initialise Scanner and for it to grab + print content
+#          It only takes a few seconds to complete
+#          Once complete this script will generate "index.html"
+#          If you want to add more content to be scanned + printed then view comments below!
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 require_relative 'Scanner.rb'
+
 scanner = Scanner.new
 iplayer_total = scanner.getIplayerTotalVpids()
-
-puts "+ - - - - - - - - - - - - - +\nScanner Initialsed ^__^\n+ - - - - - - - - - - - - - +\n"
 scanner.addHTMLheader()
 
 # More News content can be found at https://confluence.dev.bbc.co.uk/display/~jamie.pitts@bbc.co.uk/Trevor+Example+Endpoints
-# However I chose this ones as they are not stale
+# However I chose this links as they are not stale
 scanner.printNewsVpids( "News - Front Page"         , "http://trevor-producer.api.bbci.co.uk/content/cps/news/front_page"    )
 scanner.printNewsVpids( "News - Most Popular"       , "http://trevor-producer.api.bbci.co.uk/content/most_popular/news" 	   )
 scanner.printNewsVpids( "News - Technology"         , "http://trevor-producer.api.bbci.co.uk/content/cps/news/technology" 	 )
@@ -29,16 +29,15 @@ scanner.printGuidanceIplayerVpids( "iPlayer - Guidance" , "https://ibl.api.bbci.
 
 # Other below options could include anything under the "Categories" dropdown on IBL
 # E.G http://ibl.api.bbci.co.uk/ibl/v1/categories/films/programmes
-scanner.printIplayerTypeVpids( "iPlayer - Audio Described"  , "http://ibl.api.bbci.co.uk/ibl/v1/categories/audio-described/programmes" , "audio-described" )
-scanner.printIplayerTypeVpids( "iPlayer - Signed"           , "http://ibl.api.bbci.co.uk/ibl/v1/categories/signed/programmes"          , "signed"          )
+scanner.printIplayerTypeVpids( "iPlayer - Audio Described" , "http://ibl.api.bbci.co.uk/ibl/v1/categories/audio-described/programmes" , "audio-described" )
+scanner.printIplayerTypeVpids( "iPlayer - Signed"          , "http://ibl.api.bbci.co.uk/ibl/v1/categories/signed/programmes"          , "signed"          )
 
 # Other below options could include anything under the "Channels" dropdown on IBL
 # E.G https://ibl.api.bbci.co.uk/ibl/v1/channels/bbc_one_london/programmes
-scanner.printIplayerChannelVpids( "iPlayer - Cbeebies"    , "https://ibl.api.bbci.co.uk/ibl/v1/channels/cbeebies/programmes" )
-scanner.printIplayerChannelVpids( "iPlayer - BBC Alba"    , "https://ibl.api.bbci.co.uk/ibl/v1/channels/bbc_alba/programmes" )
-scanner.printIplayerChannelVpids( "iPlayer - S4C"         , "https://ibl.api.bbci.co.uk/ibl/v1/channels/s4cpbs/programmes"   )
+scanner.printIplayerChannelVpids( "iPlayer - Cbeebies" , "https://ibl.api.bbci.co.uk/ibl/v1/channels/cbeebies/programmes" )
+scanner.printIplayerChannelVpids( "iPlayer - BBC Alba" , "https://ibl.api.bbci.co.uk/ibl/v1/channels/bbc_alba/programmes" )
+scanner.printIplayerChannelVpids( "iPlayer - S4C"      , "https://ibl.api.bbci.co.uk/ibl/v1/channels/s4cpbs/programmes"   )
 
 scanner.printAllPagesCombinedStats()
 scanner.addNavBarLinks()
 scanner.addHTMLFooter()
-puts "+ - - - - - - - - - - - - - +\nScanning Complete!\n+ - - - - - - - - - - - - - +\n"
