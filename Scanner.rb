@@ -25,7 +25,7 @@ class Scanner
     <html>
       <head>
         <title>BBC Scanner</title>
-        <link rel="stylesheet" type="text/css" href="bbc_site_summary.css"/>
+        <link rel="stylesheet" type="text/css" href="index.css"/>
         <meta charset="UTF-8">
       </head>
       <div id="nav_bar">
