@@ -215,15 +215,15 @@ class Scanner
   def assignBackgroundImage( new_ichef_url , new_index )
     # If NEWS ichef URL, e.g - http://ichef.bbci.co.uk/images/ic/$recipe/p04l3rkg.jpg
     if new_ichef_url =~ /\$recipe/
-      holding_image = "News -> #{new_ichef_url.sub("$recipe", "976x549")}"
-      puts holding_image
+      holding_image = "#{new_ichef_url.sub("$recipe", "976x549")}"
+      puts "News -> #{new_ichef_url.sub("$recipe", "976x549")}"
       @fileHtml.puts "<div id='entry_#{new_index}' class='entry_style' style='background-image:
       linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{holding_image})'>"
 
     # Else If IPLAYER ichef URL, e.g - https://ichef.bbci.co.uk/images/ic/{recipe}/p04swgkh.jpg
     elsif new_ichef_url =~ /{recipe}/i
-      holding_image = "iPlayer -> #{new_ichef_url.sub("{recipe}", "976x549")}"
-      puts holding_image
+      holding_image = "#{new_ichef_url.sub("{recipe}", "976x549")}"
+      puts "iPlayer -> #{new_ichef_url.sub("{recipe}", "976x549")}"
       @fileHtml.puts "<div id='entry_#{new_index}' class='entry_style' style='background-image:
       linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{holding_image})'>"
 
