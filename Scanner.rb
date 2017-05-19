@@ -147,7 +147,7 @@ class Scanner
 
   def createIplayerKindFlag( new_kind )
     if new_kind == "audio-described"
-      @fileHtml.puts "<li class='iplayer_kind_flag_ad'>AUD</li>"
+      @fileHtml.puts "<li class='iplayer_kind_flag_ad'>AD</li>"
     elsif new_kind == "signed"
       @fileHtml.puts "<li class='iplayer_kind_flag_sl'>SIGN</li>"
     end
@@ -223,7 +223,7 @@ class Scanner
     # Else If IPLAYER ichef URL, e.g - https://ichef.bbci.co.uk/images/ic/{recipe}/p04swgkh.jpg
     elsif new_ichef_url =~ /{recipe}/i
       holding_image = "#{new_ichef_url.sub("{recipe}", "976x549")}"
-      puts "iPlayer -> #{new_ichef_url.sub("{recipe}", "976x549")}"
+      puts holding_image
       @fileHtml.puts "<div id='entry_#{new_index}' class='entry_style' style='background-image:
       linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{holding_image})'>"
 
