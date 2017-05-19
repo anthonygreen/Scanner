@@ -2,6 +2,7 @@
 # Author : william.daly@bbc.co.uk
 # Desc   : This is the file where all the magic happens!
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 require "net/http"
 require "uri"
 require "json"
@@ -216,14 +217,14 @@ class Scanner
     # If NEWS ichef URL, e.g - http://ichef.bbci.co.uk/images/ic/$recipe/p04l3rkg.jpg
     if new_ichef_url =~ /\$recipe/
       holding_image = "#{new_ichef_url.sub("$recipe", "976x549")}"
-      puts "News -> #{new_ichef_url.sub("$recipe", "976x549")}"
+      puts "News -> #{holding_image}"
       @fileHtml.puts "<div id='entry_#{new_index}' class='entry_style' style='background-image:
       linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{holding_image})'>"
 
     # Else If IPLAYER ichef URL, e.g - https://ichef.bbci.co.uk/images/ic/{recipe}/p04swgkh.jpg
     elsif new_ichef_url =~ /{recipe}/i
       holding_image = "#{new_ichef_url.sub("{recipe}", "976x549")}"
-      puts holding_image
+      puts "iPlayer -> #{holding_image}"
       @fileHtml.puts "<div id='entry_#{new_index}' class='entry_style' style='background-image:
       linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{holding_image})'>"
 
