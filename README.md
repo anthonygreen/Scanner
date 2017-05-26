@@ -6,7 +6,7 @@ It reads in multiple JSON feeds ([Trevor](https://confluence.dev.bbc.co.uk/displ
 
 It's run daily providing fresh vpids for testing and development.
 
-Once completed, Scanner is hosted on an S3 Bucket which I [wrote a guide on how to do it.](https://confluence.dev.bbc.co.uk/display/podtest/How+to+host+a+static+website+in+S3+using+Cosmos)) 
+Once completed, Scanner is hosted on an S3 Bucket (which I [wrote a guide on how to do it.](https://confluence.dev.bbc.co.uk/display/podtest/How+to+host+a+static+website+in+S3+using+Cosmos))
 
 ## What do I need to view the results?
 
@@ -73,8 +73,6 @@ Then you can simply run the script **upload_scanner.rb**
 
 ```
 ruby upload_scanner.rb
-Scanner has been uploaded to - http://scanner.tools.bbc.co.uk
-Enjoy! ^__^ 
 ```
 
 ## Author
