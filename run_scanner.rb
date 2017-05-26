@@ -7,7 +7,6 @@
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 require_relative 'Scanner.rb'
-
 scanner = Scanner.new
 iplayer_total = scanner.getIplayerTotalVpids()
 scanner.addHTMLheader()
