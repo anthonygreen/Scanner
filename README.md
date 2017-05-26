@@ -40,11 +40,11 @@ index.html
 
 ## How do I upload Scanner?
 
-You need to be a member of Media Playout team and have access to our S3 buckets on AWS.
+You need to be a member of the Media Playout team and have access to our S3 buckets on AWS.
 
-Once you have permissions, you can simply copy index.html into the bucket scanner.tools.bbc.co.uk
+Once you have permissions, you can simply copy **index.html** into the bucket **scanner.tools.bbc.co.uk**
 
-When that's done, make sure to make the index.html have public permissions (Right-click the file!) so people can view it!
+When that's done, make sure **index.html** has public permissions (Right-click the file!) so people can view it!
 
 ## Is there a quicker way to upload!?
 
@@ -59,7 +59,7 @@ aws-cli/1.11.90 Python/2.7.13 Darwin/14.5.0 botocore/1.5.53
 
 And a valid aws config (that has permissions to the Media Playout buckets)
 
-NOTE : This is just an example, this is not a valid config!
+NOTE : This is just an exampleof what you'd need to configure, this is not a valid config!
 
 ```
 $ aws configure
