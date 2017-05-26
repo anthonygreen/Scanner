@@ -69,9 +69,10 @@ Default region name [None]: us-west-2
 Default output format [None]: ENTER
 ```
 
-Then you can simply run the script
+Then you can simply run the script **upload_scanner.rb**
 
-```ruby upload_scanner.rb
+```
+ruby upload_scanner.rb
 Scanner has been uploaded to - http://scanner.tools.bbc.co.uk
 Enjoy! ^__^ 
 ```
