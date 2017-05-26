@@ -20,7 +20,7 @@ class Scanner
   #---------------------------------------------------------------------------------
 
   def addHTMLheader()
-    @fileHtml = File.new("derp.html", "w+")
+    @fileHtml = File.new("index.html", "w+")
     t = Time.now
     @fileHtml.puts '
     <html>
@@ -47,7 +47,7 @@ class Scanner
 
   def addNavBarLinks()
     @fileHtml.puts "
-    <div>
+    <div tabindex='0' id='drop_down'>
       <div id='links'>
           <p>Available links</p>
           <ul>"
