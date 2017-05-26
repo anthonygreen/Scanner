@@ -59,7 +59,7 @@ aws-cli/1.11.90 Python/2.7.13 Darwin/14.5.0 botocore/1.5.53
 
 And a valid aws config (that has permissions to the Media Playout buckets)
 
-NOTE : This is just an exampleof what you'd need to configure, this is not a valid config!
+NOTE : This is just an example of what you'd need to configure, this is not a valid config!
 
 ```
 $ aws configure
