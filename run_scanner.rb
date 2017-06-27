@@ -4,7 +4,7 @@
 #          It only takes a few seconds to complete
 #          Once complete this script will generate "index.html"
 #          If you want to add more content to be scanned + printed then view comments below!
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 require_relative 'Scanner.rb'
 scanner = Scanner.new
