@@ -1,27 +1,27 @@
 body
 {
 	font-family : 'Lato', Calibri, Arial, sans-serif;
-  font-size   : 12px;
+	font-size   : 12px;
 }
 
 #nav_bar
 {
-	position		 		 : fixed;
-	width			 			 : 110%;
-	height			 		 : 50px;
-	margin-top		 	 : -17px;
-	margin-left		 	 : -8px;
-	z-index			 		 : 1;
-	opacity			 		 : 0.9;
+	position		 : fixed;
+	width			 : 110%;
+	height			 : 50px;
+	margin-top		 : -17px;
+	margin-left		 : -8px;
+	z-index			 : 1;
+	opacity			 : 0.9;
 	background-color : white;
-	color       	 	 : black;
+	color       	 : black;
 	border-bottom    : 1px solid #CCCCCC;
 }
 
 #nav_bar a
 {
 	text-decoration : none;
-	color 			    : black;
+	color 			: black;
 }
 
 #nav_bar img
@@ -38,7 +38,6 @@ h1
 #wrapper
 {
 	position       : relative;
-	width          : 100%;
 	top            : 50px;
 	margin-left    : 5%;
 	padding-bottom : 700px;
@@ -53,10 +52,10 @@ h1
 #stats_summary
 {
 	position : absolute;
-	top 		 : -12px;
-	left		 : 48%;
+	top 	 : -12px;
+	left	 : 48%;
 	width    : 900px;
-  display  : flex;
+  	display  : flex;
 }
 
 #news_summary
@@ -66,7 +65,7 @@ h1
 	left     : -35%;
 	width    : 550px;
 	padding  : 7px;
-  flex     : 1;
+  	flex     : 1;
 }
 
 #iplayer_summary
@@ -91,19 +90,56 @@ h1
 
 .entry_style
 {
-	position 	   				: relative;
-	width 		   				: 15%;
-	height 		   				: 84.5%;
-  display        			: inline-block;
-  vertical-align 			: top;
-  border   	   			  : 1px solid #B3B6BF;
-  background-position : 50% 0%;
-  background-color    : white;
+	position 	   		: relative;
+	width 		   		: 15%;
+	height 		   		: 84.5%;
+  	display        		: inline-block;
+  	vertical-align 		: top;
+  	border   	   		: 1px solid #B3B6BF;
+  	background-position : 50% 0%;
+  	background-color    : white;
 }
+
+
+
+/* ----------- Devices ----------- */
+
+
+@media screen and (max-width: 1024px) and (orientation : landscape) {
+
+	#stats_summary
+	{
+	  	display  : none;
+	}
+
+  	.entry_style
+	{
+		width  	  : 43%;
+		height 	  : 510px;
+		font-size : 14px;
+	}
+}
+
+@media screen and (max-width: 1024px) and (orientation : portrait) {
+
+	#stats_summary
+	{
+	  	display  : none;
+	}
+
+  	.entry_style
+	{
+		width  	  : 95%;
+		height 	  : 580px;
+		font-size : 14px;
+	}
+}
+
+/* ----------- iPads ----------- */
 
 .entry_style:hover
 {
-  border : 1px solid black;
+  	border : 1px solid black;
 }
 
 .entry_style p
@@ -128,7 +164,7 @@ h1
 
 .iplayer_kind_flag_ad
 {
-	top 			 			 : 05px;
+	top 			 : 05px;
 	width            : 40px;
 	background-color : #214164;
 	color            : white;
@@ -137,7 +173,7 @@ h1
 
 .iplayer_kind_flag_sl
 {
-	top 			 			 : 05px;
+	top 			 : 05px;
 	width            : 40px;
 	background-color : #1c7e55;
 	color            : white;
@@ -146,7 +182,7 @@ h1
 
 .news_audio_flag
 {
-	top 			       : 05px;
+	top 			 : 05px;
 	width            : 34px;
 	background-color : red;
 	color            : white;
@@ -156,22 +192,22 @@ h1
 {
 	position : fixed;
 	z-index  : 1000;
-  top      : 10px;
-  left     : 85%;
+  	top      : 10px;
+  	left     : 85%;
 }
 
 #drop_down:hover
 {
-	border-left    : 1px solid #CCCCCC;
-		border-right    : 1px solid #CCCCCC;
+	border-left  : 1px solid #CCCCCC;
+	border-right : 1px solid #CCCCCC;
 }
 
 #drop_down:before
 {
-    content     : "▼";
-		cursor      : pointer;
-		font-weight : bold;
-		font-size   : 16px;
+	content     : "▼";
+	cursor      : pointer;
+	font-weight : bold;
+	font-size   : 16px;
 }
 
 #drop_down:focus #links
@@ -184,10 +220,10 @@ h1
 {
     position         : absolute;
     z-index          : 1000;
-		width            : 210px;
-		background-color : white;
-		border           : none;
-		color  					 : black;
+	width            : 210px;
+	background-color : white;
+	border           : none;
+	color  			 : black;
     /* disable visibility by default, delay to enable clicks */
     visibility       : hidden;
     transition       : visibility 0.5s;
@@ -196,22 +232,22 @@ h1
 #links p
 {
     position : relative;
-		left     : 10px;
-		width    : 80px;
+	left     : 10px;
+	width    : 80px;
 }
 
 #links li
 {
-	position : relative;
-	left     : -15px;
-	list-style 		   : none;
-	color : black;
+	position        : relative;
+	left            : -15px;
+	list-style      : none;
+	color           : black;
 	text-decoration : none;
 }
 
 #links li:hover
 {
-		background-color : #CCCCCC;
+	background-color : #CCCCCC;
 }
 
 #links a
