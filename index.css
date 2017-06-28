@@ -101,42 +101,6 @@ h1
 }
 
 
-
-/* ----------- Devices ----------- */
-
-
-@media screen and (max-width: 1024px) and (orientation : landscape) {
-
-	#stats_summary
-	{
-	  	display  : none;
-	}
-
-  	.entry_style
-	{
-		width  	  : 43%;
-		height 	  : 510px;
-		font-size : 14px;
-	}
-}
-
-@media screen and (max-width: 1024px) and (orientation : portrait) {
-
-	#stats_summary
-	{
-	  	display  : none;
-	}
-
-  	.entry_style
-	{
-		width  	  : 95%;
-		height 	  : 580px;
-		font-size : 14px;
-	}
-}
-
-/* ----------- iPads ----------- */
-
 .entry_style:hover
 {
   	border : 1px solid black;
@@ -255,3 +219,38 @@ h1
 	text-decoration : none;
 	color : black;
 }
+
+/* ----------- Devices ----------- */
+
+
+@media screen and (max-width: 1024px) and (orientation : landscape) {
+
+	#stats_summary
+	{
+	  	display  : none;
+	}
+
+  	.entry_style
+	{
+		width  	  : 43%;
+		height 	  : 510px;
+		font-size : 14px;
+	}
+}
+
+@media screen and (max-width: 1024px) and (orientation : portrait) {
+
+	#stats_summary
+	{
+	  	display  : none;
+	}
+
+  	.entry_style
+	{
+		width  	  : 95%;
+		height 	  : 580px;
+		font-size : 14px;
+	}
+}
+
+/* ---------------------- */
