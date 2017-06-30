@@ -100,7 +100,6 @@ h1
   	background-color    : white;
 }
 
-
 .entry_style:hover
 {
   	border : 1px solid black;
@@ -223,7 +222,35 @@ h1
 /* ----------- Devices ----------- */
 
 
-@media screen and (max-width: 1024px) and (orientation : landscape) {
+@media screen and (max-width: 1024px) and (orientation : portrait) 
+{
+	.caption,.title
+	{
+		font-size   : 1.5em;
+		font-weight : bold;
+	}
+
+	#stats_summary
+	{
+	  	display  : none;
+	}
+
+  	.entry_style
+	{
+		width  	  : 90%;
+		height 	  : 800px;
+		font-size : 2em;
+	}
+}
+
+
+@media screen and (max-width: 1024px) and (orientation : landscape) 
+{
+	.caption,.title
+	{
+		font-size   : 1.5em;
+		font-weight : bold;
+	}
 
 	#stats_summary
 	{
@@ -233,23 +260,8 @@ h1
   	.entry_style
 	{
 		width  	  : 43%;
-		height 	  : 510px;
-		font-size : 14px;
-	}
-}
-
-@media screen and (max-width: 1024px) and (orientation : portrait) {
-
-	#stats_summary
-	{
-	  	display  : none;
-	}
-
-  	.entry_style
-	{
-		width  	  : 95%;
 		height 	  : 580px;
-		font-size : 14px;
+		font-size : 1.3em;
 	}
 }
 
