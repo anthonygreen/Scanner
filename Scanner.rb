@@ -205,6 +205,72 @@ class Scanner
 
   #---------------------------------------------------------------------------------
 
+  def createTestCookBookLink( new_product , new_holding_image , new_title , new_guidance , new_vpid , new_kind )
+    smp_settings =
+    {
+      'product' => new_product,
+      'superResponsive' => true,
+      "muted"  => true,
+      "autoplay" => true,
+      "allowCasting" => true,
+      "startTime" => 2,
+      "over16" => true,
+
+      "ui" => 
+      {
+        "colour" => "#FF6600",
+        "controls" => 
+        {
+          "always" => true
+        }
+      }
+
+    }
+
+    smp_playlist =
+    {
+      'holdingImageURL' => new_holding_image,
+      'title'           => new_title,
+      'guidance'        => "FORCING GUIDANCE FOR TESTING",
+      'warning'         => "FORCING GUIDANCE FOR TESTING",
+      'items' =>
+      [
+        {
+          'versionID' => new_vpid,
+          'kind'      => new_kind
+        }
+      ],
+      "queuedPlaylist" => 
+      {
+        "items" => 
+        [
+          {
+            "vpid" => "p024s3fz",
+            "kind" => "programme"
+          }
+        ],
+        "queuedPlaylist" => 
+        {
+          "items" => 
+          [
+            {
+              'versionID' => new_vpid,
+              'kind'      => new_kind
+            }
+          ]
+        }
+      }
+    }
+
+    # Need to encode settings object + playlist object so they can be passed via browser to the COOKBOOK page successfully!
+    encoded_settings = Base64.encode64(smp_settings.to_json).gsub("\n", '')
+    encoded_playlist = Base64.encode64(smp_playlist.to_json).gsub("\n", '')
+    @fileHtml.puts "<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/errors?settings=#{encoded_settings}&playlist=#{encoded_playlist}'target='_blank'>Push To A Test Cookbook</a></li>"
+  end
+
+
+  #---------------------------------------------------------------------------------zx§aß
+
   def collectCurrentNewsEntryStats( new_version )
     # These are the only real interesting stats for NEWS content I want
     @news_stats["#{new_version["content"]["guidance"]}"] += 1
@@ -306,8 +372,10 @@ class Scanner
 
     if new_version["content"]["type"] == "bbc.mobile.news.audio"
       createCookBookLink( "news" , background_image , new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "radioProgramme" )
+      createTestCookBookLink( "news" , background_image , new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "radioProgramme" )
     else
       createCookBookLink( "news" , background_image , new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "programme" )
+      createTestCookBookLink( "news" , background_image , new_version["content"]["caption"] , new_version["content"]["guidance"] , new_version["content"]["externalId"] , "programme" )
     end
 
     createAvailabilityToolLink( new_version["content"]["externalId"] )
