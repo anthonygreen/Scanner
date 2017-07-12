@@ -210,18 +210,23 @@ class Scanner
     {
       'product' => new_product,
       'superResponsive' => true,
-      "muted"  => true,
-      "autoplay" => true,
-      "allowCasting" => true,
-      "startTime" => 2,
-      "over16" => true,
+      'muted'  => true,
+      'autoplay' => true,
+      'allowCasting' => true,
+      'startTime' => 2,
+      'over16' => true,
+      'under16' => true,
 
-      "ui" => 
+      'ui' => 
       {
-        "colour" => "#FF6600",
-        "controls" => 
+        'colour' => '#328777',
+        'controls' => 
         {
-          "always" => true
+          'always' => true
+        },
+        'guidance': 
+        {
+          'displayContinuousGuidanceInQueuePlaylist': true
         }
       }
 
@@ -230,9 +235,9 @@ class Scanner
     smp_playlist =
     {
       'holdingImageURL' => new_holding_image,
-      'title'           => new_title,
-      'guidance'        => "FORCING GUIDANCE FOR TESTING",
-      'warning'         => "FORCING GUIDANCE FOR TESTING",
+      'title'           => "YOUR clip with GUIDANCE, then a FLASH clip with WARNINGS, then YOUR clip AGAIN with WARNINGS!",
+      'guidance'        => 'FORCING GUIDANCE FOR TESTING',
+      'warning'         => 'FORCING WARNING FOR TESTING',
       'items' =>
       [
         {
@@ -240,20 +245,25 @@ class Scanner
           'kind'      => new_kind
         }
       ],
-      "queuedPlaylist" => 
+      'queuedPlaylist' => 
       {
-        "items" => 
+        'warning' => 'FORCING WARNING FOR TESTING',
+        'items' => 
         [
           {
-            "vpid" => "p024s3fz",
-            "kind" => "programme"
+            # This is vpid for Victoria Line, this is to cause FLASH Fallback
+            'vpid' => 'p024s3fz',
+            'kind' => 'programme'
           }
         ],
-        "queuedPlaylist" => 
+        'queuedPlaylist' => 
         {
-          "items" => 
+          'holdingImageURL' => new_holding_image,
+          'warning'   => 'FORCING WARNING FOR TESTING',
+          'items' => 
           [
             {
+              # Also testing from FLASH player to HTML player
               'versionID' => new_vpid,
               'kind'      => new_kind
             }
@@ -267,7 +277,6 @@ class Scanner
     encoded_playlist = Base64.encode64(smp_playlist.to_json).gsub("\n", '')
     @fileHtml.puts "<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/errors?settings=#{encoded_settings}&playlist=#{encoded_playlist}'target='_blank'>Push To A Test Cookbook</a></li>"
   end
-
 
   #---------------------------------------------------------------------------------zx§aß
 
@@ -422,6 +431,7 @@ class Scanner
         # Create links
         createIplayerLink( parent["id"] , version["kind"] )
         createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
+        createTestCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
         createAvailabilityToolLink ( version["id"] )
         createPipsLink(version["id"])
         # createPipsLink(parent["id"])
@@ -471,6 +481,7 @@ class Scanner
           # Create links
           createIplayerLink( parent["id"] , version["kind"] )
           createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
+          createTestCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
           createAvailabilityToolLink ( version["id"] )
           createPipsLink(version["id"])
           # createPipsLink(parent["id"])
@@ -522,6 +533,7 @@ class Scanner
             # Create links
             createIplayerLink( parent["id"] , version["kind"] )
             createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
+            createTestCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
             createAvailabilityToolLink ( version["id"] )
             createPipsLink(version["id"])
             # createPipsLink(parent["id"])
@@ -573,6 +585,7 @@ class Scanner
           # Create links
           createIplayerLink( parent["id"] , version["kind"] )
           createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
+          createTestCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
           createAvailabilityToolLink ( version["id"] )
           createPipsLink(version["id"])
           # createPipsLink(parent["id"])
