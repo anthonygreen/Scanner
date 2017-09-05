@@ -96,7 +96,7 @@ class Scanner
     @fileHtml.puts "<h3>News</h3>"
     @fileHtml.puts "<ul>"
     @news_stats = Hash[@news_stats.map {|k,v| [k,v.to_s] }]
-    # Sort it alphabetically so it'll be easier to read in the final HTML output
+    # Sort alphabetically so it's easier to read in the final HTML output
     temp = Hash[ @news_stats.sort_by { |key, val| key } ]
     temp.each do |key,value|
       if key != ""
@@ -157,7 +157,8 @@ class Scanner
   #---------------------------------------------------------------------------------
 
   def createNewsArticleLink( new_parent_id )
-    # E.g /cps/news/uk-england-lancashire-39869308 GOES TO http://www.bbc.co.uk/news/uk-england-lancashire-39869308
+    # E.g /cps/news/uk-england-lancashire-39869308 BECOMES 
+    # http://www.bbc.co.uk/news/uk-england-lancashire-39869308
     @fileHtml.puts "<li class='news_link'><a href='#{new_parent_id.sub( "/cps" , "http://www.bbc.co.uk")}'
     target='_blank'>News Article Link</a></li>"
   end
@@ -165,7 +166,8 @@ class Scanner
   #---------------------------------------------------------------------------------
 
   def createPipsLink( new_pid )
-    @fileHtml.puts "<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/#{new_pid}' target='_blank'>Pips Link</a></li>"
+    @fileHtml.puts "<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/#{new_pid}' 
+    target='_blank'>Pips Link</a></li>"
   end
 
   #---------------------------------------------------------------------------------
@@ -197,10 +199,12 @@ class Scanner
         }
       ]
     }
-    # Need to encode settings object + playlist object so they can be passed via browser to the COOKBOOK page successfully!
+    # Need to encode settings + playlist objects so they can be passed via browser to COOKBOOK successfully!
     encoded_settings = Base64.encode64(smp_settings.to_json).gsub("\n", '')
     encoded_playlist = Base64.encode64(smp_playlist.to_json).gsub("\n", '')
-    @fileHtml.puts "<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/#{new_product}?settings=#{encoded_settings}&playlist=#{encoded_playlist}'target='_blank'>Push To Cookbook</a></li>"
+    @fileHtml.puts "<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/#{new_product}?settings=#{encoded_settings}&playlist=#{encoded_playlist}'
+    target='_blank'>Push To Cookbook And Customise</a></li>"
   end
 
   #---------------------------------------------------------------------------------
@@ -235,9 +239,9 @@ class Scanner
     smp_playlist =
     {
       'holdingImageURL' => new_holding_image,
-      'title'           => "YOUR clip with GUIDANCE, then a FLASH clip with WARNINGS, then YOUR clip AGAIN with WARNINGS!",
+      'title'           => "[#{new_vpid}] with GUIDANCE, FLASH clip with WARNINGS, then [#{new_vpid}] with WARNINGS",
       'guidance'        => 'FORCING GUIDANCE FOR TESTING',
-      'warning'         => 'FORCING WARNING FOR TESTING',
+      'warning'         => 'FORCING WARNING FOR TESTING', 
       'items' =>
       [
         {
@@ -251,15 +255,15 @@ class Scanner
         'items' => 
         [
           {
-            # This is vpid for Victoria Line, this is to cause FLASH Fallback
-            'vpid' => 'p024s3fz',
+            # This is vpid from SMP Playground about phones, this is to cause FLASH Fallback
+            'vpid' => 'p01xyc5x',
             'kind' => 'programme'
           }
         ],
         'queuedPlaylist' => 
         {
           'holdingImageURL' => new_holding_image,
-          'warning'   => 'FORCING WARNING FOR TESTING',
+          'warning'         => 'FORCING WARNING FOR TESTING',
           'items' => 
           [
             {
@@ -275,13 +279,14 @@ class Scanner
     # Need to encode settings object + playlist object so they can be passed via browser to the COOKBOOK page successfully!
     encoded_settings = Base64.encode64(smp_settings.to_json).gsub("\n", '')
     encoded_playlist = Base64.encode64(smp_playlist.to_json).gsub("\n", '')
-    @fileHtml.puts "<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/errors?settings=#{encoded_settings}&playlist=#{encoded_playlist}'target='_blank'>Push To A Test Cookbook</a></li>"
+    @fileHtml.puts "<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=#{encoded_settings}&playlist=#{encoded_playlist}'
+    target='_blank'>Push To Cookbook And Test</a></li>"
   end
 
   #---------------------------------------------------------------------------------zx§aß
 
   def collectCurrentNewsEntryStats( new_version )
-    # These are the only real interesting stats for NEWS content I want
+    # Only interesting stats for NEWS content I want
     @news_stats["#{new_version["content"]["guidance"]}"] += 1
     @news_stats["Embeddable #{new_version["content"]["isEmbeddable"]}"] += 1
   end
@@ -289,69 +294,78 @@ class Scanner
   #---------------------------------------------------------------------------------
 
   def assignBackgroundImage( new_ichef_url , new_index )
-    # If NEWS ichef URL, e.g - http://ichef.bbci.co.uk/images/ic/$recipe/p04l3rkg.jpg
+    # If NEWS ichef URL e.g - http://ichef.bbci.co.uk/images/ic/$recipe/p04l3rkg.jpg
     if new_ichef_url =~ /\$recipe/
       holding_image = "#{new_ichef_url.sub("$recipe", "976x549")}"
       puts "News -> #{holding_image}"
       @fileHtml.puts "<div id='entry_#{new_index}' class='entry_style' style='background-image:
       linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{holding_image})'>"
 
-    # Else If IPLAYER ichef URL, e.g - https://ichef.bbci.co.uk/images/ic/{recipe}/p04swgkh.jpg
+    # Else If IPLAYER ichef URL e.g - https://ichef.bbci.co.uk/images/ic/{recipe}/p04swgkh.jpg
     elsif new_ichef_url =~ /{recipe}/i
       holding_image = "#{new_ichef_url.sub("{recipe}", "976x549")}"
       puts "iPlayer -> #{holding_image}"
       @fileHtml.puts "<div id='entry_#{new_index}' class='entry_style' style='background-image:
       linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{holding_image})'>"
 
-    # Else there's no image
+    # Else there's no image, keep the index incrementing but don't assign an image
     else
       @fileHtml.puts "<div id='entry_#{new_index}' class='entry_style' style='background-image:
       linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{holding_image})'>"
     end
 
+    # Return image so it can be later used to pass on to CookBook
     return holding_image
   end
 
   #---------------------------------------------------------------------------------
 
-  def printNewsVpids( new_title , new_link )
+  def printNewsVpidsFromLink( new_title , new_link )
     index = 0
     external_trevor_links = []
     entry_vpids = []
+
     # Grab link and parse it
     website_resp = Net::HTTP.get_response(URI.parse(new_link))
     website_data = website_resp.body
     hash = JSON.parse(website_data)
+
     # Print News logo and header
     printNewsHeader( new_title )
-    # Cycle through the Hash and print info on each VPID
+
+    # Cycle through Hash and print info of each VPID
     hash["relations"].each do |parent|
       parent["content"]["relations"].each do |version|
         # Make a link from parent vpid, we may have to use in search of AUDIO
         parent_link = "http://trevor-producer.api.bbci.co.uk/content#{parent["content"]["id"]}"
+        
         # IF the current entry has an externalID (vpid) simply print it out and its info to the HTML page
         if version["content"]["externalId"] and not entry_vpids.include? version["content"]["externalId"]
           entry_vpids.push( version["content"]["externalId"] )
           index += 1
-          printSingleNewsEntryInfo( index , parent["content"]["id"] , version )
+          printSingleNewsEntryInfoHTML( index , parent["content"]["id"] , version )
+        
         # Else if there is NO externalId and we haven't used the link before then we visit it to check external Trevor links for AUDIO vpids!
         elsif not version["content"]["externalId"] and not external_trevor_links.include? parent_link
           # Grab link and parse it
           @website_resp = Net::HTTP.get_response(URI.parse(parent_link))
           @website_data = @website_resp.body
           temp_hash = JSON.parse(@website_data)
+          
           # Store current link so we don't revisit the same TREVOR link multiple times
           external_trevor_links.push(parent_link)
+          
           # This loop is for AUDIO since its stored differently in TREVOR
           temp_hash["relations"].each do |audio_hash|
-            # If its an audio vpid, a vpid we haven't pushed before AND duration is greater than 0 (not a stream!) then grab it!
+            # If its an audio vpid AND NOT a vpid we've strored AND duration > 0 (not a stream!) then grab it!
             if audio_hash["content"]["externalId"] and not entry_vpids.include? audio_hash["content"]["externalId"] and audio_hash["content"]["duration"] > 1
               entry_vpids.push( audio_hash["content"]["externalId"] )
               index += 1
-              printSingleNewsEntryInfo( index , parent["content"]["id"] , audio_hash )
+              printSingleNewsEntryInfoHTML( index , parent["content"]["id"] , audio_hash )
             end
           end
         end
+
       end
     end
     # This div is to close all the News entries before moving onto iPlayer
@@ -360,7 +374,7 @@ class Scanner
 
   #---------------------------------------------------------------------------------
 
-  def printSingleNewsEntryInfo( new_index , new_parent , new_version )
+  def printSingleNewsEntryInfoHTML( new_index , new_parent , new_version )
     collectCurrentNewsEntryStats( new_version )
     background_image = assignBackgroundImage( new_version["content"]["iChefUrl"] , new_index )
 
@@ -395,18 +409,21 @@ class Scanner
 
   #---------------------------------------------------------------------------------
 
-  def printIplayerVpids( new_title , new_link )
+  def printIplayerVpidsFromLink( new_title , new_link , new_section , new_child_name )
     index = 0
     temp_guidance = ""
+    
     # Grab link and parse it
     website_resp = Net::HTTP.get_response(URI.parse(new_link))
     website_data = website_resp.body
     hash = JSON.parse(website_data)
-    # Print iPlayer logo and header
+    
+    # Print iPlayer logo and printNewsHeader
     printIplayerHeader( new_title )
+    
     # Cycle through the Hash and print info on each VPID
-    hash["group_episodes"]["elements"].each do |parent|
-      parent["versions"].each do |version|
+    hash[new_section]["elements"].each do |parent|
+      parent[new_child_name].each do |version|
         background_image = assignBackgroundImage( parent["images"]["standard"] , index )
         @fileHtml.puts "<p>[#{index+=1}]</p>"
         @fileHtml.puts "<ul>"
@@ -420,21 +437,25 @@ class Scanner
         @fileHtml.puts "<li class='iplayer_downl'>Download : #{version["download"]}         </li>"
         @fileHtml.puts "<li class='iplayer_durat'>Duration : #{version["duration"]["text"]} </li>"
         @fileHtml.puts "<li class='iplayer_guide'>Guidance : #{parent["guidance"]}          </li>"
+        
         # There's a bug in IBL where a VPID may not display guidance despite its PARENT saying it does!
         if parent["guidance"] == true and version["guidance"]
           temp_guidance = version["guidance"]["text"]["medium"]
           @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]}           </li>"
         end
+
         @fileHtml.puts "<li><hr></li>"
         # Store stats for summary
         @iplayer_stats[version["kind"]] += 1
+        
         # Create links
         createIplayerLink( parent["id"] , version["kind"] )
         createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
         createTestCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
         createAvailabilityToolLink ( version["id"] )
         createPipsLink(version["id"])
-        # createPipsLink(parent["id"])
+        createPipsLink(parent["id"])
+        
         # Display KIND flag
         createIplayerKindFlag( version["kind"] )
         @fileHtml.puts "</ul></div>"
@@ -447,12 +468,15 @@ class Scanner
   def printGuidanceIplayerVpids( new_title , new_link )
     index = 0
     temp_guidance = ""
+    
     # Grab link and parse it
     website_resp = Net::HTTP.get_response(URI.parse(new_link))
     website_data = website_resp.body
     hash = JSON.parse(website_data)
+
     # Print iPlayer logo and header
     printIplayerHeader( new_title )
+
     # Cycle through the Hash and print info on each VPID
     hash["group_episodes"]["elements"].each do |parent|
       parent["versions"].each do |version|
@@ -476,8 +500,10 @@ class Scanner
             @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]}           </li>"
           end
           @fileHtml.puts "<li><hr></li>"
+          
           # Store stats for summary
           @iplayer_stats[version["kind"]] += 1
+          
           # Create links
           createIplayerLink( parent["id"] , version["kind"] )
           createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
@@ -485,6 +511,7 @@ class Scanner
           createAvailabilityToolLink ( version["id"] )
           createPipsLink(version["id"])
           # createPipsLink(parent["id"])
+          
           # Display KIND flag
           createIplayerKindFlag( version["kind"] )
           @fileHtml.puts "</ul></div>"

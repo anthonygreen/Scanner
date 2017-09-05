@@ -1,0 +1,1663 @@
+
+    <html>
+      <head>
+        <title>BBC Scanner</title>
+        <link rel="stylesheet" type="text/css" href="index.css"/>
+        <meta charset="UTF-8">
+      </head>
+      <div id="nav_bar">
+        <h1><a href="#"><img id="bbc_logo" src="images/bbc_logo.jpeg"/> Scanner</a></h1>
+      </div>
+      <div id="wrapper">
+        <p>Welcome!</p>
+        <p>Scanner outputs current video + audio vpids on iPlayer and News!</p>
+        <p>Data is loaded + filtered from
+        <a href="https://confluence.dev.bbc.co.uk/display/~jamie.pitts@bbc.co.uk/Trevor+Example+Endpoints" target="_blank">TREVOR</a>
+        and
+        <a href="https://inspector.ibl.api.bbci.co.uk" target="_blank">IBL</a></p>
+        <p>Any queries please contact <b>william.daly@bbc.co.uk</b></p>
+<p>Latest scan took place at - <div id='scan_time'>Tuesday  5  September 2017 at 12:13 PM</div></p>
+<div id='News-FrontPage'>
+<h2><img id='image_News-FrontPage'src='images/news_icon.jpeg'/> News - Front Page</h2>
+<div id='entry_1' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f6d5d.jpg)'>
+<p>[1]</p>
+<ul>
+<li class='caption'> People in Seoul, South Korea, give their views about North Korea's latest nuclear test                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f686v                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  91 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/world-asia-41158281'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNmQ1ZC5qcGciLCJ0aXRsZSI6IlBlb3BsZSBpbiBTZW91bCwgU291dGggS29yZWEsIGdpdmUgdGhlaXIgdmlld3MgYWJvdXQgTm9ydGggS29yZWEncyBsYXRlc3QgbnVjbGVhciB0ZXN0IiwiZ3VpZGFuY2UiOm51bGwsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmNjg2diIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNmQ1ZC5qcGciLCJ0aXRsZSI6IltwMDVmNjg2dl0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNjg2dl0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjY4NnYiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY2ZDVkLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjY4NnYiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f686v?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f686v' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_2' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f5b53.jpg)'>
+<p>[2]</p>
+<ul>
+<li class='caption'> US ambassador Nikki Haley: "Kim Jong-un is begging for war"                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f59x7                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  58 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/world-asia-41158281'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNWI1My5qcGciLCJ0aXRsZSI6IlVTIGFtYmFzc2Fkb3IgTmlra2kgSGFsZXk6IFwiS2ltIEpvbmctdW4gaXMgYmVnZ2luZyBmb3Igd2FyXCIiLCJndWlkYW5jZSI6bnVsbCwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWY1OXg3Iiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNWI1My5qcGciLCJ0aXRsZSI6IltwMDVmNTl4N10gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNTl4N10gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjU5eDciLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY1YjUzLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjU5eDciLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f59x7?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f59x7' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_3' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f2vk8.jpg)'>
+<p>[3]</p>
+<ul>
+<li class='caption'> South Korea practised firing missiles from the ground and rockets from fighter jets                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f2s1d                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  38 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/world-asia-41158281'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmMnZrOC5qcGciLCJ0aXRsZSI6IlNvdXRoIEtvcmVhIHByYWN0aXNlZCBmaXJpbmcgbWlzc2lsZXMgZnJvbSB0aGUgZ3JvdW5kIGFuZCByb2NrZXRzIGZyb20gZmlnaHRlciBqZXRzIiwiZ3VpZGFuY2UiOm51bGwsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmMnMxZCIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmMnZrOC5qcGciLCJ0aXRsZSI6IltwMDVmMnMxZF0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmMnMxZF0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjJzMWQiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWYydms4LmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjJzMWQiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f2s1d?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f2s1d' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_4' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f1pfj.jpg)'>
+<p>[4]</p>
+<ul>
+<li class='caption'> Nuclear N Korea: What do we know?                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f1p4d                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  81 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/world-asia-41158281'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmMXBmai5qcGciLCJ0aXRsZSI6Ik51Y2xlYXIgTiBLb3JlYTogV2hhdCBkbyB3ZSBrbm93PyIsImd1aWRhbmNlIjpudWxsLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjFwNGQiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmMXBmai5qcGciLCJ0aXRsZSI6IltwMDVmMXA0ZF0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmMXA0ZF0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjFwNGQiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWYxcGZqLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjFwNGQiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f1p4d?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f1p4d' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_5' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f4kjd.jpg)'>
+<p>[5]</p>
+<ul>
+<li class='caption'> One of the UK's most successful female game streamers talks about life on Twitch                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f4fv3                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  153 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/uk-england-hampshire-41153292'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNGtqZC5qcGciLCJ0aXRsZSI6Ik9uZSBvZiB0aGUgVUsncyBtb3N0IHN1Y2Nlc3NmdWwgZmVtYWxlIGdhbWUgc3RyZWFtZXJzIHRhbGtzIGFib3V0IGxpZmUgb24gVHdpdGNoIiwiZ3VpZGFuY2UiOm51bGwsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmNGZ2MyIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNGtqZC5qcGciLCJ0aXRsZSI6IltwMDVmNGZ2M10gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNGZ2M10gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjRmdjMiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY0a2pkLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjRmdjMiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f4fv3?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f4fv3' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_6' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f4q3b.jpg)'>
+<p>[6]</p>
+<ul>
+<li class='caption'> The BBC's Sanjoy Majumder treks through difficult terrain with people fleeing Myanmar                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f4g2q                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : true                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  147 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/world-asia-41158703'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNHEzYi5qcGciLCJ0aXRsZSI6IlRoZSBCQkMncyBTYW5qb3kgTWFqdW1kZXIgdHJla3MgdGhyb3VnaCBkaWZmaWN1bHQgdGVycmFpbiB3aXRoIHBlb3BsZSBmbGVlaW5nIE15YW5tYXIiLCJndWlkYW5jZSI6bnVsbCwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWY0ZzJxIiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNHEzYi5qcGciLCJ0aXRsZSI6IltwMDVmNGcycV0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNGcycV0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjRnMnEiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY0cTNiLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjRnMnEiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f4g2q?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f4g2q' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_7' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05dzd48.jpg)'>
+<p>[7]</p>
+<ul>
+<li class='caption'> Rohingya families are living in makeshift shelters in refugee camps                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05dzcwp                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  45 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/world-asia-41158703'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVkemQ0OC5qcGciLCJ0aXRsZSI6IlJvaGluZ3lhIGZhbWlsaWVzIGFyZSBsaXZpbmcgaW4gbWFrZXNoaWZ0IHNoZWx0ZXJzIGluIHJlZnVnZWUgY2FtcHMiLCJndWlkYW5jZSI6bnVsbCwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWR6Y3dwIiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVkemQ0OC5qcGciLCJ0aXRsZSI6IltwMDVkemN3cF0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVkemN3cF0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZHpjd3AiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWR6ZDQ4LmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZHpjd3AiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05dzcwp?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05dzcwp' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_8' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f5y9p.jpg)'>
+<p>[8]</p>
+<ul>
+<li class='caption'> The farm is in the beautiful Florida Keys Marine Sanctuary                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f5y9c                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  97 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/science-environment-41158673'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNXk5cC5qcGciLCJ0aXRsZSI6IlRoZSBmYXJtIGlzIGluIHRoZSBiZWF1dGlmdWwgRmxvcmlkYSBLZXlzIE1hcmluZSBTYW5jdHVhcnkiLCJndWlkYW5jZSI6bnVsbCwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWY1eTljIiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNXk5cC5qcGciLCJ0aXRsZSI6IltwMDVmNXk5Y10gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNXk5Y10gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjV5OWMiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY1eTlwLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjV5OWMiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f5y9c?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f5y9c' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_9' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f5ncr.jpg)'>
+<p>[9]</p>
+<ul>
+<li class='caption'> The story of how one father rescued his daughters from IS                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f5ky0                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  180 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/world-europe-41111497'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNW5jci5qcGciLCJ0aXRsZSI6IlRoZSBzdG9yeSBvZiBob3cgb25lIGZhdGhlciByZXNjdWVkIGhpcyBkYXVnaHRlcnMgZnJvbSBJUyIsImd1aWRhbmNlIjpudWxsLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjVreTAiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNW5jci5qcGciLCJ0aXRsZSI6IltwMDVmNWt5MF0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNWt5MF0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjVreTAiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY1bmNyLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjVreTAiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f5ky0?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f5ky0' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_10' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f4pm2.jpg)'>
+<p>[10]</p>
+<ul>
+<li class='caption'> How one girl's illness changed what a nation eats                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f4g0y                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  217 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/magazine-41132589'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNHBtMi5qcGciLCJ0aXRsZSI6IkhvdyBvbmUgZ2lybCdzIGlsbG5lc3MgY2hhbmdlZCB3aGF0IGEgbmF0aW9uIGVhdHMiLCJndWlkYW5jZSI6bnVsbCwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWY0ZzB5Iiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNHBtMi5qcGciLCJ0aXRsZSI6IltwMDVmNGcweV0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNGcweV0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjRnMHkiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY0cG0yLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjRnMHkiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f4g0y?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f4g0y' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_11' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05dxwjk.jpg)'>
+<p>[11]</p>
+<ul>
+<li class='caption'> Faces Not Forgotten: Painting young American gun victims                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05dtbms                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  174 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/world-us-canada-41041698'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVkeHdqay5qcGciLCJ0aXRsZSI6IkZhY2VzIE5vdCBGb3Jnb3R0ZW46IFBhaW50aW5nIHlvdW5nIEFtZXJpY2FuIGd1biB2aWN0aW1zIiwiZ3VpZGFuY2UiOm51bGwsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVkdGJtcyIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVkeHdqay5qcGciLCJ0aXRsZSI6IltwMDVkdGJtc10gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVkdGJtc10gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZHRibXMiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWR4d2prLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZHRibXMiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05dtbms?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05dtbms' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_12' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f60wh.jpg)'>
+<p>[12]</p>
+<ul>
+<li class='caption'> Palaeontologists are turning to technology to preserve dinosaur fossils                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f472v                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  64 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/technology-41012554'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNjB3aC5qcGciLCJ0aXRsZSI6IlBhbGFlb250b2xvZ2lzdHMgYXJlIHR1cm5pbmcgdG8gdGVjaG5vbG9neSB0byBwcmVzZXJ2ZSBkaW5vc2F1ciBmb3NzaWxzIiwiZ3VpZGFuY2UiOm51bGwsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmNDcydiIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNjB3aC5qcGciLCJ0aXRsZSI6IltwMDVmNDcydl0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNDcydl0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjQ3MnYiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY2MHdoLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjQ3MnYiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f472v?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f472v' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_13' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f5r16.jpg)'>
+<p>[13]</p>
+<ul>
+<li class='caption'> The view inside Hurricane Irma                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f5qrd                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  46 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/world-us-canada-41157449'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNXIxNi5qcGciLCJ0aXRsZSI6IlRoZSB2aWV3IGluc2lkZSBIdXJyaWNhbmUgSXJtYSIsImd1aWRhbmNlIjpudWxsLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjVxcmQiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNXIxNi5qcGciLCJ0aXRsZSI6IltwMDVmNXFyZF0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNXFyZF0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjVxcmQiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY1cjE2LmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjVxcmQiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f5qrd?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f5qrd' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_14' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f48bp.jpg)'>
+<p>[14]</p>
+<ul>
+<li class='caption'> Scientists 'amazed' 1970s space probes still work                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f46ss                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  111 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/science-environment-41147213'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNDhicC5qcGciLCJ0aXRsZSI6IlNjaWVudGlzdHMgJ2FtYXplZCcgMTk3MHMgc3BhY2UgcHJvYmVzIHN0aWxsIHdvcmsiLCJndWlkYW5jZSI6bnVsbCwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWY0NnNzIiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNDhicC5qcGciLCJ0aXRsZSI6IltwMDVmNDZzc10gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNDZzc10gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjQ2c3MiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY0OGJwLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjQ2c3MiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f46ss?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f46ss' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_15' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f5jjx.jpg)'>
+<p>[15]</p>
+<ul>
+<li class='caption'> Bell Pottinger's founder, Lord Bell, tells Newsnight the PR firm is unlikely to survive                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f5ht9                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  59 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/business-41156101'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNWpqeC5qcGciLCJ0aXRsZSI6IkJlbGwgUG90dGluZ2VyJ3MgZm91bmRlciwgTG9yZCBCZWxsLCB0ZWxscyBOZXdzbmlnaHQgdGhlIFBSIGZpcm0gaXMgdW5saWtlbHkgdG8gc3Vydml2ZSIsImd1aWRhbmNlIjpudWxsLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjVodDkiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNWpqeC5qcGciLCJ0aXRsZSI6IltwMDVmNWh0OV0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNWh0OV0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjVodDkiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY1amp4LmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjVodDkiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f5ht9?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f5ht9' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_16' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f4yvc.jpg)'>
+<p>[16]</p>
+<ul>
+<li class='caption'> WATCH: What Callum Tulley, 21, saw undercover                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f4ww1                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  165 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/uk-41153733'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNHl2Yy5qcGciLCJ0aXRsZSI6IldBVENIOiBXaGF0IENhbGx1bSBUdWxsZXksIDIxLCBzYXcgdW5kZXJjb3ZlciIsImd1aWRhbmNlIjpudWxsLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjR3dzEiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNHl2Yy5qcGciLCJ0aXRsZSI6IltwMDVmNHd3MV0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNHd3MV0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjR3dzEiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY0eXZjLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjR3dzEiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f4ww1?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f4ww1' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_17' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f56p5.jpg)'>
+<p>[17]</p>
+<ul>
+<li class='caption'> Emeric Le Bars captures time-lapse of the LA wildfires                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f5644                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  56 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/world-us-canada-41155413'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNTZwNS5qcGciLCJ0aXRsZSI6IkVtZXJpYyBMZSBCYXJzIGNhcHR1cmVzIHRpbWUtbGFwc2Ugb2YgdGhlIExBIHdpbGRmaXJlcyIsImd1aWRhbmNlIjpudWxsLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjU2NDQiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNTZwNS5qcGciLCJ0aXRsZSI6IltwMDVmNTY0NF0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNTY0NF0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjU2NDQiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY1NnA1LmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjU2NDQiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f5644?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f5644' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_18' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url()'>
+<p>[18]</p>
+<ul>
+<li class='caption'> EXPLAINED: What is a VPN service?                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p03fwbsh                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : false                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  57 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/news/technology-41160383'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOm51bGwsInRpdGxlIjoiRVhQTEFJTkVEOiBXaGF0IGlzIGEgVlBOIHNlcnZpY2U/IiwiZ3VpZGFuY2UiOm51bGwsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDNmd2JzaCIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOm51bGwsInRpdGxlIjoiW3AwM2Z3YnNoXSB3aXRoIEdVSURBTkNFLCBGTEFTSCBjbGlwIHdpdGggV0FSTklOR1MsIHRoZW4gW3AwM2Z3YnNoXSB3aXRoIFdBUk5JTkdTIiwiZ3VpZGFuY2UiOiJGT1JDSU5HIEdVSURBTkNFIEZPUiBURVNUSU5HIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDNmd2JzaCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7Indhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidnBpZCI6InAwMXh5YzV4Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsiaG9sZGluZ0ltYWdlVVJMIjpudWxsLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwM2Z3YnNoIiwia2luZCI6InByb2dyYW1tZSJ9XX19fQ=='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p03fwbsh?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p03fwbsh' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_19' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f5btb.jpg)'>
+<p>[19]</p>
+<ul>
+<li class='caption'> 'Everybody gave everything' - NI boss Michael O'Neill                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f5b3c                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : true                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  55 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/sport/football/41159538'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNWJ0Yi5qcGciLCJ0aXRsZSI6IidFdmVyeWJvZHkgZ2F2ZSBldmVyeXRoaW5nJyAtIE5JIGJvc3MgTWljaGFlbCBPJ05laWxsIiwiZ3VpZGFuY2UiOm51bGwsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmNWIzYyIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNWJ0Yi5qcGciLCJ0aXRsZSI6IltwMDVmNWIzY10gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNWIzY10gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjViM2MiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY1YnRiLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjViM2MiLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f5b3c?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f5b3c' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_20' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(http://ichef.bbci.co.uk/images/ic/976x549/p05f5c7p.jpg)'>
+<p>[20]</p>
+<ul>
+<li class='caption'> 'It only took me 60 caps to score a decent goal' - Chris Brunt                                       </li>
+<li><hr></li>
+ <li class='news_vpid'>Vpid : p05f5bwm                           </li>
+<li><hr>                                                                                        </li>
+<li class='news_type' >Type : video   </li>
+<li class='news_embed'>Embeddable : true                   </li>
+<li class='news_avail'>Available : true                     </li>
+<li class='news_durat'>Duration :  97 secs              </li>
+<li><hr></li>
+<li class='news_link'><a href='http://www.bbc.co.uk/sport/football/41159538'
+    target='_blank'>News Article Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/news?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNWM3cC5qcGciLCJ0aXRsZSI6IidJdCBvbmx5IHRvb2sgbWUgNjAgY2FwcyB0byBzY29yZSBhIGRlY2VudCBnb2FsJyAtIENocmlzIEJydW50IiwiZ3VpZGFuY2UiOm51bGwsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmNWJ3bSIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoibmV3cyIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwOi8vaWNoZWYuYmJjaS5jby51ay9pbWFnZXMvaWMvOTc2eDU0OS9wMDVmNWM3cC5qcGciLCJ0aXRsZSI6IltwMDVmNWJ3bV0gd2l0aCBHVUlEQU5DRSwgRkxBU0ggY2xpcCB3aXRoIFdBUk5JTkdTLCB0aGVuIFtwMDVmNWJ3bV0gd2l0aCBXQVJOSU5HUyIsImd1aWRhbmNlIjoiRk9SQ0lORyBHVUlEQU5DRSBGT1IgVEVTVElORyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjVid20iLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZwaWQiOiJwMDF4eWM1eCIsImtpbmQiOiJwcm9ncmFtbWUifV0sInF1ZXVlZFBsYXlsaXN0Ijp7ImhvbGRpbmdJbWFnZVVSTCI6Imh0dHA6Ly9pY2hlZi5iYmNpLmNvLnVrL2ltYWdlcy9pYy85NzZ4NTQ5L3AwNWY1YzdwLmpwZyIsIndhcm5pbmciOiJGT1JDSU5HIFdBUk5JTkcgRk9SIFRFU1RJTkciLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjVid20iLCJraW5kIjoicHJvZ3JhbW1lIn1dfX19'
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f5bwm?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f5bwm' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+</div>
+<div id='iPlayer-MostPopular'>
+<h2><img id='image_iPlayer-MostPopular'src='images/iplayer_icon.jpeg'/> iPlayer - Most Popular</h2>
+<div id='entry_0' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05dpykt.jpg)'>
+<p>[1]</p>
+<ul>
+<li class='title'>EastEnders                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b095777l                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : editorial                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 30 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b094hl9l/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB5a3QuanBnIiwidGl0bGUiOiJFYXN0RW5kZXJzIiwiZ3VpZGFuY2UiOiIiLCJpdGVtcyI6W3sidmVyc2lvbklEIjoiYjA5NTc3N2wiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB5a3QuanBnIiwidGl0bGUiOiJbYjA5NTc3N2xdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5NTc3N2xdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTU3NzdsIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB5a3QuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDk1Nzc3bCIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b095777l?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b095777l' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094hl9l' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_1' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05dpykt.jpg)'>
+<p>[2]</p>
+<ul>
+<li class='title'>EastEnders                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05f5707                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 30 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b094hl9l/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB5a3QuanBnIiwidGl0bGUiOiJFYXN0RW5kZXJzIiwiZ3VpZGFuY2UiOiIiLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZjU3MDciLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB5a3QuanBnIiwidGl0bGUiOiJbcDA1ZjU3MDddIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZjU3MDddIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWY1NzA3Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB5a3QuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmNTcwNyIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f5707?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f5707' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094hl9l' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_2' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05dpwzv.jpg)'>
+<p>[3]</p>
+<ul>
+<li class='title'>Strike                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b094kxfb                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 58 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b094kxgj/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB3enYuanBnIiwidGl0bGUiOiJTdHJpa2UiLCJndWlkYW5jZSI6IkNvbnRhaW5zIHNvbWUgc3Ryb25nIGxhbmd1YWdlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDk0a3hmYiIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB3enYuanBnIiwidGl0bGUiOiJbYjA5NGt4ZmJdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5NGt4ZmJdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTRreGZiIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB3enYuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDk0a3hmYiIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b094kxfb?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094kxfb' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094kxgj' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_3' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05dpwzv.jpg)'>
+<p>[4]</p>
+<ul>
+<li class='title'>Strike                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05f20wf                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 58 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b094kxgj/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB3enYuanBnIiwidGl0bGUiOiJTdHJpa2UiLCJndWlkYW5jZSI6IkNvbnRhaW5zIHNvbWUgc3Ryb25nIGxhbmd1YWdlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmMjB3ZiIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB3enYuanBnIiwidGl0bGUiOiJbcDA1ZjIwd2ZdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZjIwd2ZdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWYyMHdmIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB3enYuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmMjB3ZiIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f20wf?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f20wf' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094kxgj' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_4' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1nsp.jpg)'>
+<p>[5]</p>
+<ul>
+<li class='title'>EastEnders                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b093pl95                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 30 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b093plc6/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFuc3AuanBnIiwidGl0bGUiOiJFYXN0RW5kZXJzIiwiZ3VpZGFuY2UiOiJDb250YWlucyBzb21lIHN0cm9uZyBsYW5ndWFnZS4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoiYjA5M3BsOTUiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFuc3AuanBnIiwidGl0bGUiOiJbYjA5M3BsOTVdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5M3BsOTVdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTNwbDk1Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFuc3AuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDkzcGw5NSIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b093pl95?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093pl95' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093plc6' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_5' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1nsp.jpg)'>
+<p>[6]</p>
+<ul>
+<li class='title'>EastEnders                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05dxvqy                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 30 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b093plc6/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFuc3AuanBnIiwidGl0bGUiOiJFYXN0RW5kZXJzIiwiZ3VpZGFuY2UiOiJDb250YWlucyBzb21lIHN0cm9uZyBsYW5ndWFnZS4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZHh2cXkiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFuc3AuanBnIiwidGl0bGUiOiJbcDA1ZHh2cXldIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZHh2cXldIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWR4dnF5Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFuc3AuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVkeHZxeSIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05dxvqy?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05dxvqy' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093plc6' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_6' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1m71.jpg)'>
+<p>[7]</p>
+<ul>
+<li class='title'>Strike                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b093vffs                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 58 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b093vftv/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFtNzEuanBnIiwidGl0bGUiOiJTdHJpa2UiLCJndWlkYW5jZSI6IkNvbnRhaW5zIHNvbWUgc3Ryb25nIGxhbmd1YWdlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDkzdmZmcyIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFtNzEuanBnIiwidGl0bGUiOiJbYjA5M3ZmZnNdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5M3ZmZnNdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTN2ZmZzIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFtNzEuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDkzdmZmcyIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b093vffs?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093vffs' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093vftv' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_7' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1m71.jpg)'>
+<p>[8]</p>
+<ul>
+<li class='title'>Strike                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05dh7x6                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 58 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b093vftv/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFtNzEuanBnIiwidGl0bGUiOiJTdHJpa2UiLCJndWlkYW5jZSI6IkNvbnRhaW5zIHNvbWUgc3Ryb25nIGxhbmd1YWdlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVkaDd4NiIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFtNzEuanBnIiwidGl0bGUiOiJbcDA1ZGg3eDZdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZGg3eDZdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWRoN3g2Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFtNzEuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVkaDd4NiIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05dh7x6?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05dh7x6' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093vftv' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_8' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1p89.jpg)'>
+<p>[9]</p>
+<ul>
+<li class='title'>Strike                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b0949lzk                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : editorial                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 58 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b093vg07/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFwODkuanBnIiwidGl0bGUiOiJTdHJpa2UiLCJndWlkYW5jZSI6IkNvbnRhaW5zIHNvbWUgc3Ryb25nIGxhbmd1YWdlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDk0OWx6ayIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFwODkuanBnIiwidGl0bGUiOiJbYjA5NDlsemtdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5NDlsemtdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTQ5bHprIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFwODkuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDk0OWx6ayIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b0949lzk?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b0949lzk' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093vg07' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_9' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1p89.jpg)'>
+<p>[10]</p>
+<ul>
+<li class='title'>Strike                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05dkmyb                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 58 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b093vg07/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFwODkuanBnIiwidGl0bGUiOiJTdHJpa2UiLCJndWlkYW5jZSI6IkNvbnRhaW5zIHNvbWUgc3Ryb25nIGxhbmd1YWdlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVka215YiIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFwODkuanBnIiwidGl0bGUiOiJbcDA1ZGtteWJdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZGtteWJdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWRrbXliIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFwODkuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVka215YiIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05dkmyb?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05dkmyb' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093vg07' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_10' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05ds0c4.jpg)'>
+<p>[11]</p>
+<ul>
+<li class='title'>Dragons' Den                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b094r752                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : editorial                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 60 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b094ht1d/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHMwYzQuanBnIiwidGl0bGUiOiJEcmFnb25zJyBEZW4iLCJndWlkYW5jZSI6IkNvbnRhaW5zIHNvbWUgc3Ryb25nIGxhbmd1YWdlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDk0cjc1MiIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHMwYzQuanBnIiwidGl0bGUiOiJbYjA5NHI3NTJdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5NHI3NTJdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTRyNzUyIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHMwYzQuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDk0cjc1MiIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b094r752?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094r752' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094ht1d' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_11' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05ds0c4.jpg)'>
+<p>[12]</p>
+<ul>
+<li class='title'>Dragons' Den                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05f1y1v                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 60 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b094ht1d/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHMwYzQuanBnIiwidGl0bGUiOiJEcmFnb25zJyBEZW4iLCJndWlkYW5jZSI6IkNvbnRhaW5zIHNvbWUgc3Ryb25nIGxhbmd1YWdlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmMXkxdiIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHMwYzQuanBnIiwidGl0bGUiOiJbcDA1ZjF5MXZdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZjF5MXZdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWYxeTF2Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHMwYzQuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmMXkxdiIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f1y1v?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f1y1v' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094ht1d' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_12' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05dq6b2.jpg)'>
+<p>[13]</p>
+<ul>
+<li class='title'>Whitney: Can I Be Me                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b09481vj                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 100 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains very strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b094f49s/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE2YjIuanBnIiwidGl0bGUiOiJXaGl0bmV5OiBDYW4gSSBCZSBNZSIsImd1aWRhbmNlIjoiQ29udGFpbnMgdmVyeSBzdHJvbmcgbGFuZ3VhZ2UuIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTQ4MXZqIiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE2YjIuanBnIiwidGl0bGUiOiJbYjA5NDgxdmpdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5NDgxdmpdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTQ4MXZqIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE2YjIuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDk0ODF2aiIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b09481vj?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b09481vj' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094f49s' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_13' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05dq6b2.jpg)'>
+<p>[14]</p>
+<ul>
+<li class='title'>Whitney: Can I Be Me                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05dzyxr                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 100 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains very strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b094f49s/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE2YjIuanBnIiwidGl0bGUiOiJXaGl0bmV5OiBDYW4gSSBCZSBNZSIsImd1aWRhbmNlIjoiQ29udGFpbnMgdmVyeSBzdHJvbmcgbGFuZ3VhZ2UuIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWR6eXhyIiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE2YjIuanBnIiwidGl0bGUiOiJbcDA1ZHp5eHJdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZHp5eHJdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWR6eXhyIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE2YjIuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVkenl4ciIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05dzyxr?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05dzyxr' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094f49s' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_14' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05ds8g4.jpg)'>
+<p>[15]</p>
+<ul>
+<li class='title'>Strictly Come Dancing                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p059300z                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : false       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 22 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/p0592zzd/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHM4ZzQuanBnIiwidGl0bGUiOiJTdHJpY3RseSBDb21lIERhbmNpbmciLCJndWlkYW5jZSI6IkNvbnRhaW5zIHZlcnkgc3Ryb25nIGxhbmd1YWdlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDU5MzAweiIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHM4ZzQuanBnIiwidGl0bGUiOiJbcDA1OTMwMHpdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1OTMwMHpdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNTkzMDB6Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHM4ZzQuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDU5MzAweiIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p059300z?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p059300z' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p0592zzd' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_15' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1pjl.jpg)'>
+<p>[16]</p>
+<ul>
+<li class='title'>Trust Me                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b093qks8                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 56 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language and some upsetting scenes.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b093qktf/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFwamwuanBnIiwidGl0bGUiOiJUcnVzdCBNZSIsImd1aWRhbmNlIjoiQ29udGFpbnMgc29tZSBzdHJvbmcgbGFuZ3VhZ2UgYW5kIHNvbWUgdXBzZXR0aW5nIHNjZW5lcy4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoiYjA5M3FrczgiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFwamwuanBnIiwidGl0bGUiOiJbYjA5M3FrczhdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5M3FrczhdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTNxa3M4Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFwamwuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDkzcWtzOCIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b093qks8?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093qks8' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093qktf' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_16' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1pjl.jpg)'>
+<p>[17]</p>
+<ul>
+<li class='title'>Trust Me                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05dn9tw                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 56 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language and some upsetting scenes.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b093qktf/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFwamwuanBnIiwidGl0bGUiOiJUcnVzdCBNZSIsImd1aWRhbmNlIjoiQ29udGFpbnMgc29tZSBzdHJvbmcgbGFuZ3VhZ2UgYW5kIHNvbWUgdXBzZXR0aW5nIHNjZW5lcy4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZG45dHciLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFwamwuanBnIiwidGl0bGUiOiJbcDA1ZG45dHddIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZG45dHddIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWRuOXR3Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFwamwuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVkbjl0dyIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05dn9tw?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05dn9tw' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093qktf' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_17' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p044s27f.jpg)'>
+<p>[18]</p>
+<ul>
+<li class='title'>Keeping Rosy                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b05tvprn                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 93 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains strong language, some sexual content and some violence.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b05tvpvb/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA0NHMyN2YuanBnIiwidGl0bGUiOiJLZWVwaW5nIFJvc3kiLCJndWlkYW5jZSI6IkNvbnRhaW5zIHN0cm9uZyBsYW5ndWFnZSwgc29tZSBzZXh1YWwgY29udGVudCBhbmQgc29tZSB2aW9sZW5jZS4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoiYjA1dHZwcm4iLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA0NHMyN2YuanBnIiwidGl0bGUiOiJbYjA1dHZwcm5dIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA1dHZwcm5dIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwNXR2cHJuIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA0NHMyN2YuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDV0dnBybiIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b05tvprn?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b05tvprn' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b05tvpvb' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_18' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05dq6g8.jpg)'>
+<p>[19]</p>
+<ul>
+<li class='title'>Astronauts: Do You Have What It Takes?                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b094njp4                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : editorial                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 59 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/p05bf3r8/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE2ZzguanBnIiwidGl0bGUiOiJBc3Ryb25hdXRzOiBEbyBZb3UgSGF2ZSBXaGF0IEl0IFRha2VzPyIsImd1aWRhbmNlIjoiQ29udGFpbnMgc3Ryb25nIGxhbmd1YWdlLCBzb21lIHNleHVhbCBjb250ZW50IGFuZCBzb21lIHZpb2xlbmNlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDk0bmpwNCIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE2ZzguanBnIiwidGl0bGUiOiJbYjA5NG5qcDRdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5NG5qcDRdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTRuanA0Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE2ZzguanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDk0bmpwNCIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b094njp4?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094njp4' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05bf3r8' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_19' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05dq6g8.jpg)'>
+<p>[20]</p>
+<ul>
+<li class='title'>Astronauts: Do You Have What It Takes?                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05f20ts                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 59 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/p05bf3r8/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE2ZzguanBnIiwidGl0bGUiOiJBc3Ryb25hdXRzOiBEbyBZb3UgSGF2ZSBXaGF0IEl0IFRha2VzPyIsImd1aWRhbmNlIjoiQ29udGFpbnMgc3Ryb25nIGxhbmd1YWdlLCBzb21lIHNleHVhbCBjb250ZW50IGFuZCBzb21lIHZpb2xlbmNlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmMjB0cyIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE2ZzguanBnIiwidGl0bGUiOiJbcDA1ZjIwdHNdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZjIwdHNdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWYyMHRzIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE2ZzguanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmMjB0cyIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f20ts?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f20ts' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05bf3r8' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_20' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p0341qtm.jpg)'>
+<p>[21]</p>
+<ul>
+<li class='title'>Doctor Foster                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b06h3mgd                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 60 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b06h3mhl/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAzNDFxdG0uanBnIiwidGl0bGUiOiJEb2N0b3IgRm9zdGVyIiwiZ3VpZGFuY2UiOiJDb250YWlucyBzb21lIHN0cm9uZyBsYW5ndWFnZS4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoiYjA2aDNtZ2QiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAzNDFxdG0uanBnIiwidGl0bGUiOiJbYjA2aDNtZ2RdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA2aDNtZ2RdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwNmgzbWdkIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAzNDFxdG0uanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDZoM21nZCIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b06h3mgd?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b06h3mgd' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b06h3mhl' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_21' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p0341qtm.jpg)'>
+<p>[22]</p>
+<ul>
+<li class='title'>Doctor Foster                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p034mtsq                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 60 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b06h3mhl/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAzNDFxdG0uanBnIiwidGl0bGUiOiJEb2N0b3IgRm9zdGVyIiwiZ3VpZGFuY2UiOiJDb250YWlucyBzb21lIHN0cm9uZyBsYW5ndWFnZS4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDAzNG10c3EiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAzNDFxdG0uanBnIiwidGl0bGUiOiJbcDAzNG10c3FdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDAzNG10c3FdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwMzRtdHNxIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAzNDFxdG0uanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDM0bXRzcSIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p034mtsq?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p034mtsq' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b06h3mhl' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_22' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1px0.jpg)'>
+<p>[23]</p>
+<ul>
+<li class='title'>Celebrity MasterChef                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b093tyj2                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 89 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b093tz1m/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFweDAuanBnIiwidGl0bGUiOiJDZWxlYnJpdHkgTWFzdGVyQ2hlZiIsImd1aWRhbmNlIjoiQ29udGFpbnMgc29tZSBzdHJvbmcgbGFuZ3VhZ2UuIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTN0eWoyIiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFweDAuanBnIiwidGl0bGUiOiJbYjA5M3R5ajJdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5M3R5ajJdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTN0eWoyIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFweDAuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDkzdHlqMiIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b093tyj2?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093tyj2' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093tz1m' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_23' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1px0.jpg)'>
+<p>[24]</p>
+<ul>
+<li class='title'>Celebrity MasterChef                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05dy3ft                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 89 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b093tz1m/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFweDAuanBnIiwidGl0bGUiOiJDZWxlYnJpdHkgTWFzdGVyQ2hlZiIsImd1aWRhbmNlIjoiQ29udGFpbnMgc29tZSBzdHJvbmcgbGFuZ3VhZ2UuIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWR5M2Z0Iiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFweDAuanBnIiwidGl0bGUiOiJbcDA1ZHkzZnRdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZHkzZnRdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWR5M2Z0Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFweDAuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVkeTNmdCIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05dy3ft?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05dy3ft' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093tz1m' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_24' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05dpwxw.jpg)'>
+<p>[25]</p>
+<ul>
+<li class='title'>Casualty                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b094d5vm                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 69 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b094d5wh/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB3eHcuanBnIiwidGl0bGUiOiJDYXN1YWx0eSIsImd1aWRhbmNlIjoiQ29udGFpbnMgc29tZSBzdHJvbmcgbGFuZ3VhZ2UuIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTRkNXZtIiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB3eHcuanBnIiwidGl0bGUiOiJbYjA5NGQ1dm1dIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5NGQ1dm1dIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTRkNXZtIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB3eHcuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDk0ZDV2bSIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b094d5vm?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094d5vm' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094d5wh' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_25' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05dpwxw.jpg)'>
+<p>[26]</p>
+<ul>
+<li class='title'>Casualty                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05dzvst                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 69 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b094d5wh/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB3eHcuanBnIiwidGl0bGUiOiJDYXN1YWx0eSIsImd1aWRhbmNlIjoiQ29udGFpbnMgc29tZSBzdHJvbmcgbGFuZ3VhZ2UuIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWR6dnN0Iiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB3eHcuanBnIiwidGl0bGUiOiJbcDA1ZHp2c3RdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZHp2c3RdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWR6dnN0Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHB3eHcuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVkenZzdCIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05dzvst?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05dzvst' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094d5wh' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_26' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1nr4.jpg)'>
+<p>[27]</p>
+<ul>
+<li class='title'>EastEnders                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b093pkzr                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 30 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b093pl24/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFucjQuanBnIiwidGl0bGUiOiJFYXN0RW5kZXJzIiwiZ3VpZGFuY2UiOiJDb250YWlucyBzb21lIHN0cm9uZyBsYW5ndWFnZS4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoiYjA5M3BrenIiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFucjQuanBnIiwidGl0bGUiOiJbYjA5M3BrenJdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5M3BrenJdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTNwa3pyIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFucjQuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDkzcGt6ciIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b093pkzr?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093pkzr' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093pl24' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_27' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1nr4.jpg)'>
+<p>[28]</p>
+<ul>
+<li class='title'>EastEnders                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05dtlpp                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 30 mins </li>
+<li class='iplayer_guide'>Guidance : false          </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b093pl24/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFucjQuanBnIiwidGl0bGUiOiJFYXN0RW5kZXJzIiwiZ3VpZGFuY2UiOiJDb250YWlucyBzb21lIHN0cm9uZyBsYW5ndWFnZS4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZHRscHAiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFucjQuanBnIiwidGl0bGUiOiJbcDA1ZHRscHBdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZHRscHBdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWR0bHBwIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDFucjQuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVkdGxwcCIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05dtlpp?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05dtlpp' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b093pl24' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_28' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p01pfpbs.jpg)'>
+<p>[29]</p>
+<ul>
+<li class='title'>Let Me In                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b0154xk7                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 116 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains strong language and some violence.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b0169lsv/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAxcGZwYnMuanBnIiwidGl0bGUiOiJMZXQgTWUgSW4iLCJndWlkYW5jZSI6IkNvbnRhaW5zIHN0cm9uZyBsYW5ndWFnZSBhbmQgc29tZSB2aW9sZW5jZS4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoiYjAxNTR4azciLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAxcGZwYnMuanBnIiwidGl0bGUiOiJbYjAxNTR4azddIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjAxNTR4azddIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwMTU0eGs3Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAxcGZwYnMuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDE1NHhrNyIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b0154xk7?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b0154xk7' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b0169lsv' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_29' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p01pfpbs.jpg)'>
+<p>[30]</p>
+<ul>
+<li class='title'>Let Me In                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p01pqjpt                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 106 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains strong language and some violence.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b0169lsv/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAxcGZwYnMuanBnIiwidGl0bGUiOiJMZXQgTWUgSW4iLCJndWlkYW5jZSI6IkNvbnRhaW5zIHN0cm9uZyBsYW5ndWFnZSBhbmQgc29tZSB2aW9sZW5jZS4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDAxcHFqcHQiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAxcGZwYnMuanBnIiwidGl0bGUiOiJbcDAxcHFqcHRdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDAxcHFqcHRdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwMXBxanB0Iiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAxcGZwYnMuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDFwcWpwdCIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p01pqjpt?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p01pqjpt' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b0169lsv' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_30' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05dq75g.jpg)'>
+<p>[31]</p>
+<ul>
+<li class='title'>Diana and I                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b094f4xs                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 90 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b094f4z2/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE3NWcuanBnIiwidGl0bGUiOiJEaWFuYSBhbmQgSSIsImd1aWRhbmNlIjoiQ29udGFpbnMgc29tZSBzdHJvbmcgbGFuZ3VhZ2UuIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTRmNHhzIiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE3NWcuanBnIiwidGl0bGUiOiJbYjA5NGY0eHNdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA5NGY0eHNdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwOTRmNHhzIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE3NWcuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDk0ZjR4cyIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b094f4xs?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094f4xs' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094f4z2' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_31' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05dq75g.jpg)'>
+<p>[32]</p>
+<ul>
+<li class='title'>Diana and I                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05f5hss                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 90 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b094f4z2/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE3NWcuanBnIiwidGl0bGUiOiJEaWFuYSBhbmQgSSIsImd1aWRhbmNlIjoiQ29udGFpbnMgc29tZSBzdHJvbmcgbGFuZ3VhZ2UuIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWY1aHNzIiwia2luZCI6InByb2dyYW1tZSJ9XX0='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE3NWcuanBnIiwidGl0bGUiOiJbcDA1ZjVoc3NdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZjVoc3NdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWY1aHNzIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZHE3NWcuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVmNWhzcyIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05f5hss?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05f5hss' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b094f4z2' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_32' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d6bdb.jpg)'>
+<p>[33]</p>
+<ul>
+<li class='title'>Doctor Foster                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b06cmpl2                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : editorial                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 60 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language and some sexual content.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/p02z7zv4/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDZiZGIuanBnIiwidGl0bGUiOiJEb2N0b3IgRm9zdGVyIiwiZ3VpZGFuY2UiOiJDb250YWlucyBzb21lIHN0cm9uZyBsYW5ndWFnZSBhbmQgc29tZSBzZXh1YWwgY29udGVudC4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoiYjA2Y21wbDIiLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDZiZGIuanBnIiwidGl0bGUiOiJbYjA2Y21wbDJdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjA2Y21wbDJdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwNmNtcGwyIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDZiZGIuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDZjbXBsMiIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b06cmpl2?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b06cmpl2' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p02z7zv4' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_33' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d6bdb.jpg)'>
+<p>[34]</p>
+<ul>
+<li class='title'>Doctor Foster                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05d80mg                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 60 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language and some sexual content.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/p02z7zv4/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDZiZGIuanBnIiwidGl0bGUiOiJEb2N0b3IgRm9zdGVyIiwiZ3VpZGFuY2UiOiJDb250YWlucyBzb21lIHN0cm9uZyBsYW5ndWFnZSBhbmQgc29tZSBzZXh1YWwgY29udGVudC4iLCJpdGVtcyI6W3sidmVyc2lvbklEIjoicDA1ZDgwbWciLCJraW5kIjoicHJvZ3JhbW1lIn1dfQ=='
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDZiZGIuanBnIiwidGl0bGUiOiJbcDA1ZDgwbWddIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZDgwbWddIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWQ4MG1nIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDZiZGIuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVkODBtZyIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05d80mg?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05d80mg' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p02z7zv4' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_34' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p01wp9yq.jpg)'>
+<p>[35]</p>
+<ul>
+<li class='title'>The Box                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : b00tgycq                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : original                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 110 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some violence.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b013ktd5/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAxd3A5eXEuanBnIiwidGl0bGUiOiJUaGUgQm94IiwiZ3VpZGFuY2UiOiJDb250YWlucyBzb21lIHZpb2xlbmNlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDB0Z3ljcSIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAxd3A5eXEuanBnIiwidGl0bGUiOiJbYjAwdGd5Y3FdIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbYjAwdGd5Y3FdIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6ImIwMHRneWNxIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAxd3A5eXEuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJiMDB0Z3ljcSIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/b00tgycq?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b00tgycq' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b013ktd5' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id='entry_35' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p01wp9yq.jpg)'>
+<p>[36]</p>
+<ul>
+<li class='title'>The Box                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p033l70g                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : audio-described                  </li>
+<li class='iplayer_credit'>Credits : true       </li>
+<li class='iplayer_hd'>HD : false                        </li>
+<li class='iplayer_downl'>Download : false         </li>
+<li class='iplayer_durat'>Duration : 110 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some violence.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/b013ktd5/ad'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAxd3A5eXEuanBnIiwidGl0bGUiOiJUaGUgQm94IiwiZ3VpZGFuY2UiOiJDb250YWlucyBzb21lIHZpb2xlbmNlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDMzbDcwZyIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAxd3A5eXEuanBnIiwidGl0bGUiOiJbcDAzM2w3MGddIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDAzM2w3MGddIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwMzNsNzBnIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDAxd3A5eXEuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDMzbDcwZyIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p033l70g?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p033l70g' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/b013ktd5' 
+    target='_blank'>Pips Link</a></li>
+<li class='iplayer_kind_flag_ad'>AD</li>
+</ul></div>
+<div id='entry_36' class='entry_style' style='background-image:
+      linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(https://ichef.bbci.co.uk/images/ic/976x549/p05d1yms.jpg)'>
+<p>[37]</p>
+<ul>
+<li class='title'>Sex Map of Britain                                </li>
+<li><hr>                                                            </li>
+ <li class='iplayer_vpid'>Vpid : p05dmddg                   </li>
+<li><hr>                                                            </li>
+<li class='iplayer_kind'>Kind : iplayer-version                  </li>
+<li class='iplayer_credit'>Credits : false       </li>
+<li class='iplayer_hd'>HD : true                        </li>
+<li class='iplayer_downl'>Download : true         </li>
+<li class='iplayer_durat'>Duration : 20 mins </li>
+<li class='iplayer_guide'>Guidance : true          </li>
+<li>Guidance : Contains some strong language.           </li>
+<li><hr></li>
+<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/p05cg275/'
+    target='_blank'>iPlayer Link</a></li>
+<li class='cookbook_link'>
+    <a href='http://cookbook.tools.bbc.co.uk/iplayer?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZX0=&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDF5bXMuanBnIiwidGl0bGUiOiJTZXggTWFwIG9mIEJyaXRhaW4iLCJndWlkYW5jZSI6IkNvbnRhaW5zIHNvbWUgc3Ryb25nIGxhbmd1YWdlLiIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVkbWRkZyIsImtpbmQiOiJwcm9ncmFtbWUifV19'
+    target='_blank'>Push To Cookbook And Customise</a></li>
+<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=eyJwcm9kdWN0IjoiaXBsYXllciIsInN1cGVyUmVzcG9uc2l2ZSI6dHJ1ZSwibXV0ZWQiOnRydWUsImF1dG9wbGF5Ijp0cnVlLCJhbGxvd0Nhc3RpbmciOnRydWUsInN0YXJ0VGltZSI6Miwib3ZlcjE2Ijp0cnVlLCJ1bmRlcjE2Ijp0cnVlLCJ1aSI6eyJjb2xvdXIiOiIjMzI4Nzc3IiwiY29udHJvbHMiOnsiYWx3YXlzIjp0cnVlfSwiZ3VpZGFuY2UiOnsiZGlzcGxheUNvbnRpbnVvdXNHdWlkYW5jZUluUXVldWVQbGF5bGlzdCI6dHJ1ZX19fQ==&playlist=eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDF5bXMuanBnIiwidGl0bGUiOiJbcDA1ZG1kZGddIHdpdGggR1VJREFOQ0UsIEZMQVNIIGNsaXAgd2l0aCBXQVJOSU5HUywgdGhlbiBbcDA1ZG1kZGddIHdpdGggV0FSTklOR1MiLCJndWlkYW5jZSI6IkZPUkNJTkcgR1VJREFOQ0UgRk9SIFRFU1RJTkciLCJ3YXJuaW5nIjoiRk9SQ0lORyBXQVJOSU5HIEZPUiBURVNUSU5HIiwiaXRlbXMiOlt7InZlcnNpb25JRCI6InAwNWRtZGRnIiwia2luZCI6InByb2dyYW1tZSJ9XSwicXVldWVkUGxheWxpc3QiOnsid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2cGlkIjoicDAxeHljNXgiLCJraW5kIjoicHJvZ3JhbW1lIn1dLCJxdWV1ZWRQbGF5bGlzdCI6eyJob2xkaW5nSW1hZ2VVUkwiOiJodHRwczovL2ljaGVmLmJiY2kuY28udWsvaW1hZ2VzL2ljLzk3Nng1NDkvcDA1ZDF5bXMuanBnIiwid2FybmluZyI6IkZPUkNJTkcgV0FSTklORyBGT1IgVEVTVElORyIsIml0ZW1zIjpbeyJ2ZXJzaW9uSUQiOiJwMDVkbWRkZyIsImtpbmQiOiJwcm9ncmFtbWUifV19fX0='
+    target='_blank'>Push To Cookbook And Test</a></li>
+<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/p05dmddg?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05dmddg' 
+    target='_blank'>Pips Link</a></li>
+<li class='pips_link'><a href='https://api.live.bbc.co.uk/pips/inspector/pip/p05cg275' 
+    target='_blank'>Pips Link</a></li>
+</ul></div>
+<div id="stats_summary">
+<p>Scanner has detected <b>right now</b> there are vpids with properties -</p>
+<div id="news_summary">
+<h3>News</h3>
+<ul>
+<li class='stat'>Embeddable false = 17</li>
+<li class='stat'>Embeddable true = 3</li>
+</ul></div>
+<div id="iplayer_summary">
+<h3>Iplayer</h3>
+<ul>
+<li class='stat'>audio-described = 17</li>
+<li class='stat'>editorial = 5</li>
+<li class='stat'>iplayer-version = 1</li>
+<li class='stat'>original = 14</li>
+</ul>
+</div>
+</div>
+
+    <div tabindex='0' id='drop_down'>
+      <div id='links'>
+          <p>Available links</p>
+          <ul>
+<li><a href='#News-FrontPage'>News - Front Page</a></li>
+<li><a href='#iPlayer-MostPopular'>iPlayer - Most Popular</a></li>
+</ul></div></div>
+</body></html>
