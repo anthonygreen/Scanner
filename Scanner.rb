@@ -409,7 +409,7 @@ class Scanner
 
   #---------------------------------------------------------------------------------
 
-  def printIplayerVpidsFromLink( new_title , new_link , new_section , new_child_name )
+  def printIplayerVpidsFromLink( new_title , new_link , new_section )
     index = 0
     temp_guidance = ""
     
@@ -423,205 +423,60 @@ class Scanner
     
     # Cycle through the Hash and print info on each VPID
     hash[new_section]["elements"].each do |parent|
-      parent[new_child_name].each do |version|
-        background_image = assignBackgroundImage( parent["images"]["standard"] , index )
-        @fileHtml.puts "<p>[#{index+=1}]</p>"
-        @fileHtml.puts "<ul>"
-        @fileHtml.puts "<li class='title'>#{parent["title"]}                                </li>"
-        @fileHtml.puts "<li><hr>                                                            </li>"
-        @fileHtml.puts " <li class='iplayer_vpid'>Vpid : #{version["id"]}                   </li>"
-        @fileHtml.puts "<li><hr>                                                            </li>"
-        @fileHtml.puts "<li class='iplayer_kind'>Kind : #{version["kind"]}                  </li>"
-        @fileHtml.puts "<li class='iplayer_credit'>Credits : #{parent["has_credits"]}       </li>"
-        @fileHtml.puts "<li class='iplayer_hd'>HD : #{version["hd"]}                        </li>"
-        @fileHtml.puts "<li class='iplayer_downl'>Download : #{version["download"]}         </li>"
-        @fileHtml.puts "<li class='iplayer_durat'>Duration : #{version["duration"]["text"]} </li>"
-        @fileHtml.puts "<li class='iplayer_guide'>Guidance : #{parent["guidance"]}          </li>"
-        
-        # There's a bug in IBL where a VPID may not display guidance despite its PARENT saying it does!
-        if parent["guidance"] == true and version["guidance"]
-          temp_guidance = version["guidance"]["text"]["medium"]
-          @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]}           </li>"
+      # If its a "category" or a "channel" the json structure is slightly different
+      if new_section == "category_programmes" or new_section == "channel_programmes"
+        parent["initial_children"].each do |child|
+          child["versions"].each do |version|
+          x( parent , version )
+          end
         end
-
-        @fileHtml.puts "<li><hr></li>"
-        # Store stats for summary
-        @iplayer_stats[version["kind"]] += 1
-        
-        # Create links
-        createIplayerLink( parent["id"] , version["kind"] )
-        createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
-        createTestCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
-        createAvailabilityToolLink ( version["id"] )
-        createPipsLink(version["id"])
-        createPipsLink(parent["id"])
-        
-        # Display KIND flag
-        createIplayerKindFlag( version["kind"] )
-        @fileHtml.puts "</ul></div>"
+      # Else if its "Most Popular" 
+      else
+        parent["versions"].each do |version|
+          x( parent , version )
+        end
       end
     end
   end
 
   #---------------------------------------------------------------------------------
 
-  def printGuidanceIplayerVpids( new_title , new_link )
+  def x( parent , version)
     index = 0
     temp_guidance = ""
+    background_image = assignBackgroundImage( parent["images"]["standard"] , index )  
+    @fileHtml.puts "<ul>"
+    @fileHtml.puts "<li class='title'>#{parent["title"]}                                </li>"
+    @fileHtml.puts "<li><hr>                                                            </li>"
+    @fileHtml.puts " <li class='iplayer_vpid'>Vpid : #{version["id"]}                   </li>"
+    @fileHtml.puts "<li><hr>                                                            </li>"
+    @fileHtml.puts "<li class='iplayer_kind'>Kind : #{version["kind"]}                  </li>"
+    @fileHtml.puts "<li class='iplayer_credit'>Credits : #{parent["has_credits"]}       </li>"
+    @fileHtml.puts "<li class='iplayer_hd'>HD : #{version["hd"]}                        </li>"
+    @fileHtml.puts "<li class='iplayer_downl'>Download : #{version["download"]}         </li>"
+    @fileHtml.puts "<li class='iplayer_durat'>Duration : #{version["duration"]["text"]} </li>"
+    @fileHtml.puts "<li class='iplayer_guide'>Guidance : #{parent["guidance"]}          </li>"
     
-    # Grab link and parse it
-    website_resp = Net::HTTP.get_response(URI.parse(new_link))
-    website_data = website_resp.body
-    hash = JSON.parse(website_data)
-
-    # Print iPlayer logo and header
-    printIplayerHeader( new_title )
-
-    # Cycle through the Hash and print info on each VPID
-    hash["group_episodes"]["elements"].each do |parent|
-      parent["versions"].each do |version|
-        if parent["guidance"] == true
-          background_image = assignBackgroundImage( parent["images"]["standard"] , index )
-          @fileHtml.puts "<p>[#{index+=1}]</p>"
-          @fileHtml.puts "<ul>"
-          @fileHtml.puts "<li class='title'>#{parent["title"]}                                </li>"
-          @fileHtml.puts "<li><hr>                                                            </li>"
-          @fileHtml.puts " <li class='iplayer_vpid'>Vpid : #{version["id"]}                   </li>"
-          @fileHtml.puts "<li><hr>                                                            </li>"
-          @fileHtml.puts "<li class='iplayer_kind'>Kind : #{version["kind"]}                  </li>"
-          @fileHtml.puts "<li class='iplayer_credit'>Credits : #{parent["has_credits"]}       </li>"
-          @fileHtml.puts "<li class='iplayer_hd'>HD : #{version["hd"]}                        </li>"
-          @fileHtml.puts "<li class='iplayer_downl'>Download : #{version["download"]}         </li>"
-          @fileHtml.puts "<li class='iplayer_durat'>Duration : #{version["duration"]["text"]} </li>"
-          @fileHtml.puts "<li class='iplayer_guide'>Guidance : #{parent["guidance"]}          </li>"
-          # There's a bug in IBL where a VPID may not display guidance despite its PARENT saying it does!
-          if parent["guidance"] == true and version["guidance"]
-            temp_guidance = version["guidance"]["text"]["medium"]
-            @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]}           </li>"
-          end
-          @fileHtml.puts "<li><hr></li>"
-          
-          # Store stats for summary
-          @iplayer_stats[version["kind"]] += 1
-          
-          # Create links
-          createIplayerLink( parent["id"] , version["kind"] )
-          createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
-          createTestCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
-          createAvailabilityToolLink ( version["id"] )
-          createPipsLink(version["id"])
-          # createPipsLink(parent["id"])
-          
-          # Display KIND flag
-          createIplayerKindFlag( version["kind"] )
-          @fileHtml.puts "</ul></div>"
-        end
-      end
+    # There's a bug in IBL where a VPID may not display guidance despite its PARENT saying it does!
+    if parent["guidance"] == true and version["guidance"]
+      temp_guidance = version["guidance"]["text"]["medium"]
+      @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]}  </li>"
     end
-  end
-
-  # #---------------------------------------------------------------------------------
-
-  def printIplayerTypeVpids( new_title , new_link , new_kind )
-    index = 0
-    temp_guidance = ""
-    # Grab link and parse it
-    website_resp = Net::HTTP.get_response(URI.parse(new_link))
-    website_data = website_resp.body
-    hash = JSON.parse(website_data)
-    # Print iPlayer logo and header
-    printIplayerHeader( new_title )
-    # Cycle through the Hash and print info on each VPID
-    hash["category_programmes"]["elements"].each do |parent|
-      parent["initial_children"].each do |child|
-        child["versions"].each do |version|
-          if version["kind"] == new_kind
-            background_image = assignBackgroundImage( parent["images"]["standard"] , index )
-            @fileHtml.puts "<p>[#{index+=1}]</p>"
-            @fileHtml.puts "<ul>"
-            @fileHtml.puts "<li class='title'>#{parent["title"]}                                </li>"
-            @fileHtml.puts "<li><hr>                                                            </li>"
-            @fileHtml.puts " <li class='iplayer_vpid'>Vpid : #{version["id"]}                   </li>"
-            @fileHtml.puts "<li><hr>                                                            </li>"
-            @fileHtml.puts "<li class='iplayer_kind'>Kind : #{version["kind"]}                  </li>"
-            @fileHtml.puts "<li class='iplayer_credit'>Credits : #{child["has_credits"]}        </li>"
-            @fileHtml.puts "<li class='iplayer_hd'>HD : #{version["hd"]}                        </li>"
-            @fileHtml.puts "<li class='iplayer_downl'>Download : #{version["download"]}         </li>"
-            @fileHtml.puts "<li class='iplayer_durat'>Duration : #{version["duration"]["text"]} </li>"
-            @fileHtml.puts "<li class='iplayer_guide'>Guidance : #{child["guidance"]}           </li>"
-            # Guidance located at a different level in HASH
-            if child["guidance"] == true and version["guidance"]
-              temp_guidance = version["guidance"]["text"]["medium"]
-              @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]} </li>"
-            end
-            @fileHtml.puts "<li><hr></li>"
-            # Store stats for summary
-            @iplayer_stats[version["kind"]] += 1
-            # Create links
-            createIplayerLink( parent["id"] , version["kind"] )
-            createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
-            createTestCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
-            createAvailabilityToolLink ( version["id"] )
-            createPipsLink(version["id"])
-            # createPipsLink(parent["id"])
-            # Display KIND flag
-            createIplayerKindFlag( version["kind"] )
-            @fileHtml.puts "</ul></div>"
-          end
-        end
-      end
-    end
-  end
-
-  #---------------------------------------------------------------------------------
-
-  def printIplayerChannelVpids( new_title , new_link )
-    index = 0
-    temp_guidance = ""
-    # Grab link and parse it
-    website_resp = Net::HTTP.get_response(URI.parse(new_link))
-    website_data = website_resp.body
-    hash = JSON.parse(website_data)
-    # Print iPlayer logo and header
-    printIplayerHeader( new_title )
-    # Cycle through the Hash and print info on each VPID
-    hash["channel_programmes"]["elements"].each do |parent|
-      parent["initial_children"].each do |child|
-        child["versions"].each do |version|
-          background_image = assignBackgroundImage( parent["images"]["standard"] , index )
-          @fileHtml.puts "<p>[#{index+=1}]</p>"
-          @fileHtml.puts "<ul>"
-          @fileHtml.puts "<li class='title'>#{parent["title"]}                                </li>"
-          @fileHtml.puts "<li><hr>                                                            </li>"
-          @fileHtml.puts " <li class='iplayer_vpid'>Vpid : #{version["id"]}                   </li>"
-          @fileHtml.puts "<li><hr>                                                            </li>"
-          @fileHtml.puts "<li class='iplayer_kind'>Kind : #{version["kind"]}                  </li>"
-          @fileHtml.puts "<li class='iplayer_credit'>Credits : #{child["has_credits"]}        </li>"
-          @fileHtml.puts "<li class='iplayer_hd'>HD : #{version["hd"]}                        </li>"
-          @fileHtml.puts "<li class='iplayer_downl'>Download : #{version["download"]}         </li>"
-          @fileHtml.puts "<li class='iplayer_durat'>Duration : #{version["duration"]["text"]} </li>"
-          @fileHtml.puts "<li class='iplayer_guide'>Guidance : #{child["guidance"]}           </li>"
-          # Guidance located at a different level in HASH
-          if child["guidance"] == true and version["guidance"]
-            temp_guidance = version["guidance"]["text"]["medium"]
-            @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]} </li>"
-          end
-          @fileHtml.puts "<li><hr></li>"
-          # Store stats for summary
-          @iplayer_stats[version["kind"]] += 1
-          # Create links
-          createIplayerLink( parent["id"] , version["kind"] )
-          createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
-          createTestCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
-          createAvailabilityToolLink ( version["id"] )
-          createPipsLink(version["id"])
-          # createPipsLink(parent["id"])
-          # Display KIND flag
-          createIplayerKindFlag( version["kind"] )
-          @fileHtml.puts "</ul></div>"
-        end
-      end
-    end
+    @fileHtml.puts "<li><hr></li>"
+    
+    # Store stats for summary
+    @iplayer_stats[version["kind"]] += 1
+    
+    # Create links
+    createIplayerLink( parent["id"] , version["kind"] )
+    createCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
+    createTestCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
+    createAvailabilityToolLink ( version["id"] )
+    createPipsLink(version["id"])
+    
+    # Display KIND flag
+    createIplayerKindFlag( version["kind"] )
+    @fileHtml.puts "</ul></div>"
   end
 
   #---------------------------------------------------------------------------------
