@@ -79,7 +79,7 @@ class Scanner
     @fileHtml.puts "<h3>Iplayer</h3>"
     @fileHtml.puts "<ul>"
     @iplayer_stats = Hash[@iplayer_stats.map {|k,v| [k,v.to_s] }]
-    temp = Hash[ @iplayer_stats.sort_by { |key, val| key } ]
+    temp = Hash[ @iplayer_stats.sort_by { |key, val| key } ] # Sort Keys alphabetically so easier to read in HTML output
     temp.each do |key,value|
       @fileHtml.puts "<li class='stat'>#{key} = #{value}</li>"
     end
@@ -277,13 +277,11 @@ class Scanner
     # If NEWS ichef URL [http://ichef.bbci.co.uk/images/ic/$recipe/p04l3rkg.jpg]
     if new_ichef_url =~ /\$recipe/
       holding_image = "#{new_ichef_url.sub("$recipe", "976x549")}"
-      puts holding_image 
       @fileHtml.puts "<div id='entry_#{@index}' class='entry_style' style='background-image:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)), url(#{holding_image})'>"
 
     # If IPLAYER ichef URL [https://ichef.bbci.co.uk/images/ic/{recipe}/p04swgkh.jpg]
     elsif new_ichef_url =~ /{recipe}/i
       holding_image = "#{new_ichef_url.sub("{recipe}", "976x549")}"
-      puts holding_image
       @fileHtml.puts "<div id='entry_#{@index}' class='entry_style' style='background-image:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{holding_image})'>"
 
     # Else there's no image, keep the index incrementing but don't assign an image
@@ -318,10 +316,7 @@ class Scanner
         
         # Else if there is NO externalId and we haven't used the link before then we visit it to check external Trevor links for AUDIO vpids!
         elsif not version["content"]["externalId"] and not external_trevor_links.include? parent_link
-          # Grab link and parse it
-          @website_resp = Net::HTTP.get_response(URI.parse(parent_link))
-          @website_data = @website_resp.body
-          temp_hash = JSON.parse(@website_data)
+          temp_hash = parseJSONFromLink( parent_link ) 
           
           # Store current link so we don't revisit the same TREVOR link multiple times
           external_trevor_links.push(parent_link)
@@ -385,7 +380,7 @@ class Scanner
     iplayer_hash = parseJSONFromLink( new_link ) 
     printIplayerHeader( new_title )
   
-    # Cycle through the Hash
+    # Cycle through the iPlayer Hash of vpids
     iplayer_hash[new_section]["elements"].each do |parent|
       # If the link was a "category" or a "channel" the json structure is slightly different so we handle accordingly
       if new_section == "category_programmes" or new_section == "channel_programmes"
@@ -393,10 +388,10 @@ class Scanner
           child["versions"].each do |version|
             # If we want a certain kind from category e.g "signed" or "audio described"
             if new_section == "category_programmes" and version["kind"] == new_flag
-              printVpid( parent , version )
+              printIplayerVpid( parent , version )
             # Else we just want content from a channel e.g "CBBC"
             elsif new_section == "channel_programmes"
-              printVpid( parent , version )
+              printIplayerVpid( parent , version )
             end
           end
         end
@@ -406,13 +401,13 @@ class Scanner
           parent["versions"].each do |version|
             #  If we just want guidance content on "Most Popular"
             if parent["guidance"] == true
-              printVpid( parent , version )
+              printIplayerVpid( parent , version )
             end
           end
         else
           # We want all types of conetent on "Most Popular" regardless of guidance
           parent["versions"].each do |version|
-            printVpid( parent, version )
+            printIplayerVpid( parent, version )
           end
         end
       end
@@ -421,7 +416,7 @@ class Scanner
 
   #---------------------------------------------------------------------------------
 
-  def printVpid( parent , version )
+  def printIplayerVpid( parent , version )
     temp_guidance = ""
     background_image = assignBackgroundImage( parent["images"]["standard"] ) 
     @fileHtml.puts "<p>[#{@index+=1}]</p>"
@@ -434,16 +429,15 @@ class Scanner
     @fileHtml.puts "<li class='iplayer_hd'>HD : #{version["hd"]}                        </li>"
     @fileHtml.puts "<li class='iplayer_downl'>Download : #{version["download"]}         </li>"
     @fileHtml.puts "<li class='iplayer_durat'>Duration : #{version["duration"]["text"]} </li>"
-    
-    if version["guidance"] and ! parent["initial_children"]
-      @fileHtml.puts "<li class='iplayer_guide'>Guidance : #{parent["guidance"]}  </li>" 
-    end
 
-    if parent["guidance"] == true and version["guidance"]
-      temp_guidance = version["guidance"]["text"]["medium"]
-      @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]}  </li>"
+    # If it's "Most Popular" and has guidance
+    if ! parent["initial_children"] and version["guidance"]
+      @fileHtml.puts "<li class='iplayer_guide'>Guidance : #{parent["guidance"]}  </li>"
+        if parent["guidance"] == true and version["guidance"]
+        temp_guidance = version["guidance"]["text"]["medium"]
+        @fileHtml.puts "<li>Guidance : #{version["guidance"]["text"]["medium"]}  </li>"
+      end
     end
-
     # "Channels" and "Categorys" have a slightly different JSON structure to "Most Popular"
     if parent["initial_children"]
       parent["initial_children"].each do |child_hash|
@@ -459,9 +453,8 @@ class Scanner
       end
     end
     @fileHtml.puts "<li><hr></li>"
-    
-    # Store stats for summary
-    @iplayer_stats[version["kind"]] += 1
+
+    @iplayer_stats[version["kind"]] += 1 # Store stats for summary
     
     # Create links + any flag
     createIplayerLink( parent["id"] , version["kind"] )

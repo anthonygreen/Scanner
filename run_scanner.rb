@@ -34,3 +34,5 @@ scanner.printIplayerVpidsFromLink( "iPlayer - S4C"      , "https://ibl.api.bbci.
 scanner.printStats()
 scanner.addNavBarLinks()
 scanner.addHTMLFooter()
+
+puts "Scanner has finished! Come again! ^___^"
