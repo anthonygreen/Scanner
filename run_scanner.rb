@@ -25,13 +25,12 @@ scanner.printIplayerVpidsFromLink( "iPlayer - Least Popular"    , "https://ibl.a
 scanner.printIplayerVpidsFromLink( "iPlayer - Guidance"         , "https://ibl.api.bbci.co.uk/ibl/v1/groups/popular/episodes" , "group_episodes" , "guidance"   )
 
 # Other below options could include anything under the "Categories" dropdown on IBL
-scanner.printIplayerVpidsFromLink( "iPlayer - Audio Described" , "http://ibl.api.bbci.co.uk/ibl/v1/categories/audio-described/programmes" , "category_programmes" , "audio-described"  )
-scanner.printIplayerVpidsFromLink( "iPlayer - Signed"          , "http://ibl.api.bbci.co.uk/ibl/v1/categories/signed/programmes"          , "category_programmes"  , "signed" )
+scanner.printIplayerVpidsFromLink( "iPlayer - Signed"          , "http://ibl.api.bbci.co.uk/ibl/v1/categories/signed/programmes" , "category_programmes"  , "signed" )
 
 # Other below options could include anything under the "Channels" dropdown on IBL
 scanner.printIplayerVpidsFromLink( "iPlayer - Cbeebies" , "https://ibl.api.bbci.co.uk/ibl/v1/channels/cbeebies/programmes" , "channel_programmes"    , "" )
 scanner.printIplayerVpidsFromLink( "iPlayer - S4C"      , "https://ibl.api.bbci.co.uk/ibl/v1/channels/s4cpbs/programmes"   , "channel_programmes"    , "" )
 
-scanner.printAllPagesCombinedStats()
+scanner.printStats()
 scanner.addNavBarLinks()
 scanner.addHTMLFooter()

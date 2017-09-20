@@ -64,7 +64,7 @@ class Scanner
 
   #---------------------------------------------------------------------------------
 
-  def printAllPagesCombinedStats()
+  def printStats()
     @fileHtml.puts '<div id="stats_summary">'
     @fileHtml.puts "<p>Scanner has detected <b>right now</b> there are <b>#{@index}</b> vpids with properties -</p>"
     printNewsStats()
@@ -136,14 +136,13 @@ class Scanner
   #---------------------------------------------------------------------------------
 
   def createIplayerLink( new_parent_id , new_kind )
-    tag = ''
     if new_kind == "audio-described"
-      tag = 'ad'
+      @fileHtml.puts "<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/#{new_parent_id}/ad/'   target='_blank'>iPlayer Link</a></li>"
     elsif new_kind == "signed"
-      tag = 'sign'
+      @fileHtml.puts "<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/#{new_parent_id}/sign/' target='_blank'>iPlayer Link</a></li>"
+    else
+      @fileHtml.puts "<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/#{new_parent_id}/'     target='_blank'>iPlayer Link</a></li>"
     end
-    @fileHtml.puts "<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/#{new_parent_id}/#{tag}'
-    target='_blank'>iPlayer Link</a></li>"
   end
 
   #---------------------------------------------------------------------------------
@@ -200,10 +199,8 @@ class Scanner
 
     encoded_settings = Base64.encode64(smp_settings.to_json).gsub("\n", '')
     encoded_playlist = Base64.encode64(smp_playlist.to_json).gsub("\n", '')
-    @fileHtml.puts "<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/#{new_product}?settings=#{encoded_settings}&playlist=#{encoded_playlist}' 
-    target='_blank'>Push To Cookbook And Customise</a></li>"
+    @fileHtml.puts "<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/#{new_product}?settings=#{encoded_settings}&playlist=#{encoded_playlist}' target='_blank'>Push To Cookbook And Customise</a></li>"
   end
-
 
   #---------------------------------------------------------------------------------
 
@@ -268,10 +265,10 @@ class Scanner
         }
       }
     }
+
     encoded_settings = Base64.encode64(smp_settings.to_json).gsub("\n", '')
     encoded_playlist = Base64.encode64(smp_playlist.to_json).gsub("\n", '')
-    @fileHtml.puts "<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=#{encoded_settings}&playlist=#{encoded_playlist}'
-    target='_blank'>Push To Cookbook And Test</a></li>"
+    @fileHtml.puts "<li class='cookbook_link'><a href='http://cookbook.tools.bbc.co.uk/markers?settings=#{encoded_settings}&playlist=#{encoded_playlist}' target='_blank'>Push To Cookbook And Test</a></li>"
   end
 
   #---------------------------------------------------------------------------------
@@ -304,11 +301,11 @@ class Scanner
     external_trevor_links = []
     entry_vpids = []
     
-    hash = parseJSONFromLink( new_link ) 
+    news_hash = parseJSONFromLink( new_link ) 
     printNewsHeader( new_title )
 
     # Cycle through Hash and print info of each VPID
-    hash["relations"].each do |parent|
+    news_hash["relations"].each do |parent|
       parent["content"]["relations"].each do |version|
         # Make a link from parent vpid, we may have to use in search of AUDIO
         parent_link = "http://trevor-producer.api.bbci.co.uk/content#{parent["content"]["id"]}"
@@ -341,8 +338,7 @@ class Scanner
         end
       end
     end
-    # This div is to close all the News entries before moving onto iPlayer
-    @fileHtml.puts "</div>"
+    @fileHtml.puts "</div>" # This div is to close all the News entries before moving onto iPlayer
   end
 
   #---------------------------------------------------------------------------------
@@ -365,8 +361,8 @@ class Scanner
     # Store stats for summary
     @news_stats["#{new_version["content"]["guidance"]}"] += 1
     @news_stats["Embeddable #{new_version["content"]["isEmbeddable"]}"] += 1
-    
-    # Show links + any flag
+
+    # Create links + any flag
     createNewsArticleLink( new_parent )
 
     if new_version["content"]["type"] == "bbc.mobile.news.audio"
@@ -386,22 +382,21 @@ class Scanner
   #---------------------------------------------------------------------------------
 
   def printIplayerVpidsFromLink( new_title , new_link , new_section , new_flag )
-
-    hash = parseJSONFromLink( new_link ) 
+    iplayer_hash = parseJSONFromLink( new_link ) 
     printIplayerHeader( new_title )
-    
+  
     # Cycle through the Hash
-    hash[new_section]["elements"].each do |parent|
+    iplayer_hash[new_section]["elements"].each do |parent|
       # If the link was a "category" or a "channel" the json structure is slightly different so we handle accordingly
       if new_section == "category_programmes" or new_section == "channel_programmes"
         parent["initial_children"].each do |child|
           child["versions"].each do |version|
             # If we want a certain kind from category e.g "signed" or "audio described"
-            if version["kind"] == new_flag and new_section == "category_programmes"
-              printVpids( parent , version )
+            if new_section == "category_programmes" and version["kind"] == new_flag
+              printVpid( parent , version )
             # Else we just want content from a channel e.g "CBBC"
             elsif new_section == "channel_programmes"
-              printVpids( parent , version )
+              printVpid( parent , version )
             end
           end
         end
@@ -411,13 +406,13 @@ class Scanner
           parent["versions"].each do |version|
             #  If we just want guidance content on "Most Popular"
             if parent["guidance"] == true
-              printVpids( parent , version )
+              printVpid( parent , version )
             end
           end
         else
-          # We want all types of conetent on "Most Popular" regardless of guidance or kind
+          # We want all types of conetent on "Most Popular" regardless of guidance
           parent["versions"].each do |version|
-            printVpids( parent, version )
+            printVpid( parent, version )
           end
         end
       end
@@ -426,7 +421,7 @@ class Scanner
 
   #---------------------------------------------------------------------------------
 
-  def printVpids( parent , version )
+  def printVpid( parent , version )
     temp_guidance = ""
     background_image = assignBackgroundImage( parent["images"]["standard"] ) 
     @fileHtml.puts "<p>[#{@index+=1}]</p>"
@@ -468,7 +463,7 @@ class Scanner
     # Store stats for summary
     @iplayer_stats[version["kind"]] += 1
     
-    # Show links + any flag
+    # Create links + any flag
     createIplayerLink( parent["id"] , version["kind"] )
     createCookBookLink(     "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
     createTestCookBookLink( "iplayer" , background_image , parent["title"] , temp_guidance , version["id"] , "programme" )
