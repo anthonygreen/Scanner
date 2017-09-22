@@ -66,7 +66,7 @@ class Scanner
 
   def printStats()
     @fileHtml.puts '<div id="stats_summary">'
-    @fileHtml.puts "<p>Scanner has detected <b>right now</b> there are <b>#{@index}</b> vpids with properties -</p>"
+    @fileHtml.puts "<p>Scanner has detected <strong>right now</strong> there are <strong>#{@index}</strong> vpids with properties -</p>"
     printNewsStats()
     printIplayerStats()
     @fileHtml.puts "</div>"
@@ -137,11 +137,14 @@ class Scanner
 
   def createIplayerLink( new_parent_id , new_kind )
     if new_kind == "audio-described"
-      @fileHtml.puts "<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/#{new_parent_id}/ad/'   target='_blank'>iPlayer Link</a></li>"
+      @fileHtml.puts "<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/#{new_parent_id}/ad/' 
+      target='_blank'>iPlayer Link</a></li>"
     elsif new_kind == "signed"
-      @fileHtml.puts "<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/#{new_parent_id}/sign/' target='_blank'>iPlayer Link</a></li>"
+      @fileHtml.puts "<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/#{new_parent_id}/sign/' 
+      target='_blank'>iPlayer Link</a></li>"
     else
-      @fileHtml.puts "<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/#{new_parent_id}/'     target='_blank'>iPlayer Link</a></li>"
+      @fileHtml.puts "<li class='iplayer_link'><a href='http://www.bbc.co.uk/iplayer/episode/#{new_parent_id}/' 
+      target='_blank'>iPlayer Link</a></li>"
     end
   end
 
@@ -171,7 +174,8 @@ class Scanner
   #---------------------------------------------------------------------------------
 
   def createAvailabilityToolLink( new_pid )
-     @fileHtml.puts "<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/#{new_pid}?mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>"
+     @fileHtml.puts "<li class='avail_link'><a href='http://media-availability.tools.bbc.co.uk/#{new_pid}?
+     mediator=http%3A%2F%2Fopen.live.bbc.co.uk' target='_blank'>Availability Link</a></li>"
   end
 
   #---------------------------------------------------------------------------------
@@ -277,16 +281,19 @@ class Scanner
     # If NEWS ichef URL [http://ichef.bbci.co.uk/images/ic/$recipe/p04l3rkg.jpg]
     if new_ichef_url =~ /\$recipe/
       holding_image = "#{new_ichef_url.sub("$recipe", "976x549")}"
-      @fileHtml.puts "<div id='entry_#{@index}' class='entry_style' style='background-image:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)), url(#{holding_image})'>"
+      @fileHtml.puts "<div id='entry_#{@index}' class='entry_style' 
+      style='background-image:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)), url(#{holding_image})'>"
 
     # If IPLAYER ichef URL [https://ichef.bbci.co.uk/images/ic/{recipe}/p04swgkh.jpg]
     elsif new_ichef_url =~ /{recipe}/i
       holding_image = "#{new_ichef_url.sub("{recipe}", "976x549")}"
-      @fileHtml.puts "<div id='entry_#{@index}' class='entry_style' style='background-image:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{holding_image})'>"
+      @fileHtml.puts "<div id='entry_#{@index}' class='entry_style' 
+      style='background-image:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)),url(#{holding_image})'>"
 
     # Else there's no image, keep the index incrementing but don't assign an image
     else
-      @fileHtml.puts "<div id='entry_#{@index}' class='entry_style' style='background-image:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)), url(#{holding_image})'>"
+      @fileHtml.puts "<div id='entry_#{@index}' class='entry_style' 
+      style='background-image:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1.0)), url(#{holding_image})'>"
     end
 
     # Return image so it can be later used to pass on to COOKBOOK
@@ -386,11 +393,7 @@ class Scanner
       if new_section == "category_programmes" or new_section == "channel_programmes"
         parent["initial_children"].each do |child|
           child["versions"].each do |version|
-            # If we want a certain kind from category e.g "signed" or "audio described"
-            if new_section == "category_programmes" and version["kind"] == new_flag
-              printIplayerVpid( parent , version )
-            # Else we just want content from a channel e.g "CBBC"
-            elsif new_section == "channel_programmes"
+            if (new_section == "category_programmes" and version["kind"] == new_flag) or new_section == "channel_programmes"
               printIplayerVpid( parent , version )
             end
           end
