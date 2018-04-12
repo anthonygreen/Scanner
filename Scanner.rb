@@ -129,7 +129,7 @@ class Scanner
 
   def parseJSONFromLink( new_link ) 
     website_resp = Net::HTTP.get_response(URI.parse(new_link))
-    website_data = website_resp.body
+    website_data = (website_resp.code == '200') ? website_resp.body : '{}'
     return JSON.parse(website_data) # Returns a hash
   end
 
@@ -310,8 +310,8 @@ class Scanner
     printNewsHeader( new_title )
 
     # Cycle through Hash and print info of each VPID
-    news_hash["relations"].each do |parent|
-      parent["content"]["relations"].each do |version|
+    news_hash.fetch("relations", []).each do |parent|
+      parent.fetch("content", {}).fetch("relations", []).each do |version|
         # Make a link from parent vpid, we may have to use in search of AUDIO
         parent_link = "http://trevor-producer.api.bbci.co.uk/content#{parent["content"]["id"]}"
         
@@ -329,7 +329,7 @@ class Scanner
           external_trevor_links.push(parent_link)
           
           # This loop is for AUDIO since its stored differently in TREVOR
-          temp_hash["relations"].each do |audio_hash|
+          temp_hash.fetch("relations", []).each do |audio_hash|
             # If its an audio vpid AND NOT a vpid we've strored AND duration > 0 (not a stream!) then grab it!
             if audio_hash["content"]["externalId"] and not entry_vpids.include? audio_hash["content"]["externalId"] and audio_hash["content"]["duration"] > 1
               entry_vpids.push( audio_hash["content"]["externalId"] )
